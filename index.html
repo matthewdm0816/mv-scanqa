@@ -40,6 +40,10 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <script src="static/js/three.min.js"></script>
+  <script src="static/js/OrbitControls.js"></script>
+  <script src="static/js/GLTFLoader.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -156,11 +160,10 @@
 </section>
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
@@ -169,7 +172,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -189,6 +192,881 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- TripAlign Dataset Showcase -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TripAlign Dataset Showcase</h2>
+        <div class="content has-text-justified">
+          <p>
+            TripAlign contains 1M triplets of &lt;2D view, 3D objects, text&gt; that provide rich multimodal alignment signals. 
+            Each triplet captures contextually related objects from multiple viewpoints with detailed textual descriptions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Data Viewer -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full">
+        <!-- Controls -->
+        <div class="field is-grouped is-grouped-centered" style="margin-bottom: 2rem;">
+          <div class="control">
+            <label class="label">Scene:</label>
+            <div class="select">
+              <select id="tripAlignSceneSelector">
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+          </div>
+          <div class="control">
+            <label class="label">Triplet:</label>
+            <div class="select">
+              <select id="tripAlignTripletSelector">
+                <option value="triplet_0">Triplet 1</option>
+                <option value="triplet_1">Triplet 2</option>
+                <option value="triplet_2">Triplet 3</option>
+                <option value="triplet_3">Triplet 4</option>
+              </select>
+            </div>
+          </div>
+          <div class="control">
+            <label class="label">Debug:</label>
+            <label class="checkbox">
+              <input type="checkbox" id="showAxes" checked>
+              Show Axes
+            </label>
+          </div>
+        </div>
+
+        <!-- Main Visualization Area -->
+        <div class="columns">
+          <!-- 2D View -->
+          <div class="column is-half">
+            <div class="box">
+              <h4 class="title is-5 has-text-centered">2D View</h4>
+              <figure class="image">
+                <img id="tripAlign2DView" src="static/tripalign/images/scene0000_00/color/0.jpg" 
+                     alt="2D View" style="border-radius: 8px;">
+              </figure>
+              <div class="content" style="margin-top: 1rem;">
+                <p class="has-text-centered is-size-7">
+                  <strong>Camera Position:</strong> <span id="cameraInfo">Position: (2.1, 1.5, -3.2), Rotation: (15°, -45°, 0°)</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Scene -->
+          <div class="column is-half">
+            <div class="box">
+              <h4 class="title is-5 has-text-centered">3D Scene</h4>
+              <div style="position: relative;">
+                <div id="tripAlignLoading" style="position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); z-index: 10; display: none;">
+                  <div class="button is-loading is-large is-white" style="border: none;"></div>
+                </div>
+                <canvas id="tripAlign3DScene" style="width: 100%; height: 300px; border-radius: 8px; background-color: #f8f9fa;"></canvas>
+              </div>
+              <div class="content" style="margin-top: 1rem;">
+                <p class="has-text-centered is-size-7">
+                  <strong>Highlighted Objects:</strong> <span id="objectInfo">Sofa, Coffee Table, TV Stand</span>
+                </p>
+                <p class="has-text-centered is-size-7">
+                  <em>Drag to rotate • Scroll to zoom • Right-click to pan</em>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Description -->
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="box">
+              <h4 class="title is-5 has-text-centered">Contextual Description</h4>
+              <div class="content">
+                <blockquote id="tripAlignText" style="font-size: 1.1em; line-height: 1.6; border-left: 4px solid #3273dc; padding-left: 1rem;">
+                  "In this cozy living room scene, there is a comfortable brown leather sofa positioned against the wall, 
+                  with a wooden coffee table placed in front of it. The coffee table has some magazines and a small plant on top. 
+                  To the right, there's a modern TV stand holding a flat-screen television. The spatial arrangement creates 
+                  a typical entertainment area where the sofa faces the TV, with the coffee table serving as a functional 
+                  surface between them."
+                </blockquote>
+              </div>
+              <div class="tags is-centered">
+                <span class="tag is-primary">Spatial Relations</span>
+                <span class="tag is-info">Object Properties</span>
+                <span class="tag is-success">Contextual Understanding</span>
+                <span class="tag is-warning">Multi-Object Alignment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="columns is-multiline" style="margin-top: 2rem;">
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <p class="title is-4 has-text-primary">1M</p>
+              <p class="subtitle is-6">Total Triplets</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <p class="title is-4 has-text-info">650</p>
+              <p class="subtitle is-6">Unique Scenes</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <p class="title is-4 has-text-success">3.2</p>
+              <p class="subtitle is-6">Avg Objects per Triplet</p>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="box has-text-centered">
+              <p class="title is-4 has-text-warning">24.5</p>
+              <p class="subtitle is-6">Avg Words per Description</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-centered" style="margin-top: 1rem;">
+          <p class="is-size-7 has-text-grey">
+            <em>Note: Use the dropdown menus to explore different scenes and triplets. 
+            The 3D viewer supports mouse interaction for rotation and zoom.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE.js and required libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+
+<!-- JavaScript for TripAlign Visualization -->
+<script>
+  // Updated data structure for TripAlign
+  const tripAlignData = {
+    "scene0000_00": {
+      "triplet_0": {
+        "2d_image": "static/tripalign/images/scene0000_00/color/0.jpg",
+        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "text": "In this cozy living room scene, there is a comfortable brown leather sofa positioned against the wall, with a wooden coffee table placed in front of it. The coffee table has some magazines and a small plant on top. To the right, there's a modern TV stand holding a flat-screen television. The spatial arrangement creates a typical entertainment area where the sofa faces the TV, with the coffee table serving as a functional surface between them.",
+        "camera_info": "Position: (2.1, 1.5, -3.2), Rotation: (15°, -45°, 0°)",
+        "objects": "Sofa, Coffee Table, TV Stand"
+      },
+      "triplet_1": {
+        "2d_image": "static/tripalign/images/scene0000_00/color/20.jpg",
+        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "text": "From this angle, we can see the dining area adjacent to the living room. A rectangular wooden dining table is surrounded by four matching chairs. Above the table hangs a modern pendant light fixture. The chairs are neatly arranged around the table, creating an inviting space for family meals and gatherings.",
+        "camera_info": "Position: (-1.8, 2.0, 1.5), Rotation: (20°, 135°, 0°)",
+        "objects": "Dining Table, Chairs, Pendant Light"
+      },
+      "triplet_2": {
+        "2d_image": "static/tripalign/images/scene0000_00/color/40.jpg",
+        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "text": "This view captures the corner reading nook with a comfortable armchair positioned next to a tall bookshelf. A small side table holds a reading lamp and a cup of coffee. The bookshelf is filled with various books and decorative items, creating a cozy atmosphere for reading and relaxation.",
+        "camera_info": "Position: (3.5, 1.2, 2.8), Rotation: (10°, -60°, 0°)",
+        "objects": "Armchair, Bookshelf, Side Table, Reading Lamp"
+      }
+    },
+    "scene0001_00": {
+      "triplet_0": {
+        "2d_image": "static/tripalign/images/scene0001_00/color/0.jpg",
+        "3d_model": "static/tripalign/scene/scene0001_00/scene0001_00_vh_clean.ply",
+        "text": "The modern kitchen features a large central island with bar stools arranged along one side. The island serves as both a preparation area and casual dining space. Pendant lights hang above the island, providing focused illumination for cooking and dining activities.",
+        "camera_info": "Position: (0.5, 2.5, -4.0), Rotation: (25°, 0°, 0°)",
+        "objects": "Kitchen Island, Bar Stools, Pendant Lights"
+      }
+    },
+    "scene0002_00": {
+      "triplet_0": {
+        "2d_image": "static/tripalign/images/scene0002_00/color/0.jpg",
+        "3d_model": "static/tripalign/scene/scene0002_00/scene0002_00_vh_clean.ply",
+        "text": "A spacious bedroom with a queen-size bed positioned against the main wall. Two nightstands flank the bed, each topped with matching table lamps. A large dresser sits opposite the bed, with a mirror mounted above it.",
+        "camera_info": "Position: (4.2, 1.8, -2.1), Rotation: (12°, -30°, 0°)",
+        "objects": "Bed, Nightstands, Dresser, Mirror"
+      }
+    }
+  };
+
+  // 3D Scene variables
+  let scene, camera, renderer, controls;
+  let currentModel = null;
+  let currentSceneId = null;
+  let currentAlignmentMatrix = null; // Store alignment matrix
+  let plyLoader;
+  let modelCenter = new THREE.Vector3();
+  let modelSize = 0;
+
+  // Alignment matrix cache
+  const alignmentMatrixCache = {};
+
+
+
+  function init3DScene() {
+    const canvas = document.getElementById('tripAlign3DScene');
+    
+    // Scene setup
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf8f9fa);
+    
+    // Camera setup
+    camera = new THREE.PerspectiveCamera(60, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+    
+    // Renderer setup
+    renderer = new THREE.WebGLRenderer({ 
+      canvas: canvas, 
+      antialias: true,
+      alpha: true 
+    });
+    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    
+    // Enhanced ambient lighting setup
+    setupLighting();
+    
+    // Add debug axes
+    addDebugAxes();
+    
+    // Controls setup
+    controls = new THREE.OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = true;
+    controls.enablePan = true;
+    controls.maxPolarAngle = Math.PI;
+    controls.minDistance = 0.5;
+    controls.maxDistance = 50;
+    controls.autoRotate = false;
+    controls.autoRotateSpeed = 0.5;
+    
+    // PLY Loader setup
+    plyLoader = new THREE.PLYLoader();
+    
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+    
+    console.log('3D Scene initialized successfully');
+  }
+
+    // Calculate mass center (average position) of all vertices with sampling for large point clouds
+    function calculateMassCenter(geometry) {
+    const positions = geometry.attributes.position;
+    const vertexCount = positions.count;
+    
+    // Use sampling for large point clouds to improve performance
+    const maxSampleSize = 50000; // Sample at most 50k points
+    const sampleStep = Math.max(1, Math.floor(vertexCount / maxSampleSize));
+    const actualSampleSize = Math.floor(vertexCount / sampleStep);
+    
+    console.log(`Calculating mass center: ${vertexCount} total vertices, sampling every ${sampleStep} (${actualSampleSize} samples)`);
+    
+    let sumX = 0, sumY = 0, sumZ = 0;
+    let sampleCount = 0;
+    
+    // Sample vertices to calculate average position
+    for (let i = 0; i < vertexCount; i += sampleStep) {
+      sumX += positions.getX(i);
+      sumY += positions.getY(i);
+      sumZ += positions.getZ(i);
+      sampleCount++;
+    }
+    
+    const massCenter = new THREE.Vector3(
+      sumX / sampleCount,
+      sumY / sampleCount,
+      sumZ / sampleCount
+    );
+    
+    console.log(`Mass center calculated from ${sampleCount} samples:`, massCenter);
+    return massCenter;
+  }
+
+  // Calculate bounding box size for scaling (still needed for scale calculation)
+  function calculateBoundingSize(geometry) {
+    const positions = geometry.attributes.position;
+    const vertexCount = positions.count;
+    
+    // Use sampling for large point clouds
+    const maxSampleSize = 10000; // Smaller sample for bounding box
+    const sampleStep = Math.max(1, Math.floor(vertexCount / maxSampleSize));
+    
+    let minX = Infinity, minY = Infinity, minZ = Infinity;
+    let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+    
+    // Sample vertices to find bounds
+    for (let i = 0; i < vertexCount; i += sampleStep) {
+      const x = positions.getX(i);
+      const y = positions.getY(i);
+      const z = positions.getZ(i);
+      
+      minX = Math.min(minX, x);
+      minY = Math.min(minY, y);
+      minZ = Math.min(minZ, z);
+      maxX = Math.max(maxX, x);
+      maxY = Math.max(maxY, y);
+      maxZ = Math.max(maxZ, z);
+    }
+    
+    const size = new THREE.Vector3(
+      maxX - minX,
+      maxY - minY,
+      maxZ - minZ
+    );
+    
+    const maxSize = Math.max(size.x, size.y, size.z);
+    console.log(`Bounding size calculated from sampling:`, size, `Max dimension: ${maxSize}`);
+    
+    return maxSize;
+  }
+
+  function setupLighting() {
+    // Remove existing lights
+    const existingLights = scene.children.filter(child => child.isLight);
+    existingLights.forEach(light => scene.remove(light));
+    
+    // High-quality ambient lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    scene.add(ambientLight);
+    
+    // Main directional light from above (following ScanNet Y-up convention)
+    const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    mainLight.position.set(0, 10, 0);
+    mainLight.castShadow = true;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
+    mainLight.shadow.camera.near = 0.5;
+    mainLight.shadow.camera.far = 50;
+    mainLight.shadow.camera.left = -10;
+    mainLight.shadow.camera.right = 10;
+    mainLight.shadow.camera.top = 10;
+    mainLight.shadow.camera.bottom = -10;
+    scene.add(mainLight);
+    
+    // Fill lights from sides
+    const fillLight1 = new THREE.DirectionalLight(0xffffff, 0.3);
+    fillLight1.position.set(5, 5, 0);
+    scene.add(fillLight1);
+    
+    const fillLight2 = new THREE.DirectionalLight(0xffffff, 0.3);
+    fillLight2.position.set(-5, 5, 0);
+    scene.add(fillLight2);
+    
+    const fillLight3 = new THREE.DirectionalLight(0xffffff, 0.3);
+    fillLight3.position.set(0, 5, 5);
+    scene.add(fillLight3);
+    
+    const fillLight4 = new THREE.DirectionalLight(0xffffff, 0.3);
+    fillLight4.position.set(0, 5, -5);
+    scene.add(fillLight4);
+    
+    // Hemisphere light for natural ambient lighting
+    const hemisphereLight = new THREE.HemisphereLight(0x87CEEB, 0x8B7355, 0.4);
+    scene.add(hemisphereLight);
+    
+    console.log('Enhanced lighting setup complete');
+  }
+
+  function addDebugAxes() {
+    // Remove existing axes if any
+    const existingAxes = scene.children.filter(child => child.name === 'debugAxes');
+    existingAxes.forEach(axes => scene.remove(axes));
+    
+    // Create axes helper
+    const axesHelper = new THREE.AxesHelper(2);
+    axesHelper.name = 'debugAxes';
+    scene.add(axesHelper);
+    
+    // Create text labels
+    const createTextSprite = (text, color, position) => {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = 64;
+      canvas.height = 64;
+      
+      context.fillStyle = color;
+      context.font = 'Bold 32px Arial';
+      context.textAlign = 'center';
+      context.fillText(text, 32, 40);
+      
+      const texture = new THREE.CanvasTexture(canvas);
+      const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+      const sprite = new THREE.Sprite(spriteMaterial);
+      sprite.position.copy(position);
+      sprite.scale.set(0.5, 0.5, 1);
+      sprite.name = 'debugAxes';
+      
+      return sprite;
+    };
+    
+    // Add axis labels
+    const xLabel = createTextSprite('X', '#ff0000', new THREE.Vector3(2.2, 0, 0));
+    const yLabel = createTextSprite('Y', '#00ff00', new THREE.Vector3(0, 2.2, 0));
+    const zLabel = createTextSprite('Z', '#0000ff', new THREE.Vector3(0, 0, 2.2));
+    
+    scene.add(xLabel);
+    scene.add(yLabel);
+    scene.add(zLabel);
+    
+    console.log('Debug axes added - ScanNet convention: X(red)=right, Y(green)=up, Z(blue)=forward');
+  }
+
+  function toggleAxes(show) {
+    const axes = scene.children.filter(child => child.name === 'debugAxes');
+    axes.forEach(axis => {
+      axis.visible = show;
+    });
+  }
+
+  function showLoading() {
+    document.getElementById('tripAlignLoading').style.display = 'block';
+  }
+
+  function hideLoading() {
+    document.getElementById('tripAlignLoading').style.display = 'none';
+  }
+
+  // Load alignment matrix from scene text file
+  async function loadAlignmentMatrix(sceneId) {
+    // Check cache first
+    if (alignmentMatrixCache[sceneId]) {
+      console.log(`Using cached alignment matrix for ${sceneId}`);
+      return alignmentMatrixCache[sceneId];
+    }
+
+    try {
+      const response = await fetch(`static/tripalign/scene/${sceneId}/${sceneId}.txt`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const text = await response.text();
+      const lines = text.split('\n');
+      
+      let axisAlignMatrix = null;
+      for (const line of lines) {
+        if (line.includes('axisAlignment')) {
+          const matrixStr = line.replace('axisAlignment = ', '').trim();
+          const values = matrixStr.split(' ').map(x => parseFloat(x));
+          
+          if (values.length === 16) {
+            // Create 4x4 matrix from the values
+            axisAlignMatrix = new THREE.Matrix4();
+            axisAlignMatrix.set(
+              values[0], values[1], values[2], values[3],
+              values[4], values[5], values[6], values[7],
+              values[8], values[9], values[10], values[11],
+              values[12], values[13], values[14], values[15]
+            );
+            break;
+          }
+        }
+      }
+      
+      if (!axisAlignMatrix) {
+        console.warn(`No axis alignment matrix found for ${sceneId}, using identity`);
+        axisAlignMatrix = new THREE.Matrix4(); // Identity matrix
+      }
+      
+      // Cache the result
+      alignmentMatrixCache[sceneId] = axisAlignMatrix;
+      console.log(`Loaded alignment matrix for ${sceneId}:`, axisAlignMatrix);
+      
+      return axisAlignMatrix;
+      
+    } catch (error) {
+      console.error(`Error loading alignment matrix for ${sceneId}:`, error);
+      // Return identity matrix as fallback
+      const identityMatrix = new THREE.Matrix4();
+      alignmentMatrixCache[sceneId] = identityMatrix;
+      return identityMatrix;
+    }
+  }
+
+  // Apply alignment transformation to geometry
+  function applyAlignmentToGeometry(geometry, alignmentMatrix) {
+    // Get the transpose of the alignment matrix (R^T in the formula P' = P * R^T)
+    // const alignmentTranspose = alignmentMatrix.clone().transpose();
+    const alignmentTranspose = alignmentMatrix; //.clone().transpose();
+
+    
+    // Apply transformation to all vertices
+    const positions = geometry.attributes.position;
+    const vertex = new THREE.Vector3();
+    
+    for (let i = 0; i < positions.count; i++) {
+      vertex.fromBufferAttribute(positions, i);
+      vertex.applyMatrix4(alignmentTranspose);
+      positions.setXYZ(i, vertex.x, vertex.y, vertex.z);
+    }
+    
+    // Mark positions as needing update
+    positions.needsUpdate = true;
+    
+    // Recompute normals after transformation
+    geometry.computeVertexNormals();
+    
+    console.log('Applied alignment transformation to geometry');
+  }
+
+  // Updated function to center and scale model using mass center
+  function centerAndScaleModel(mesh) {
+    console.log('Centering and scaling model using mass center...');
+    
+    // Get geometry from mesh
+    const geometry = mesh.geometry;
+    
+    // Calculate mass center (average position of vertices)
+    const massCenter = calculateMassCenter(geometry);
+    
+    // Calculate bounding size for scaling
+    const boundingSize = calculateBoundingSize(geometry);
+    
+    // Store model info
+    modelCenter.copy(massCenter);
+    modelSize = boundingSize;
+    
+    // Center the model at origin using mass center
+    mesh.position.set(-massCenter.x, -massCenter.y, -massCenter.z);
+    
+    // Scale the model to fit nicely in view
+    const targetSize = 4;
+    const scale = targetSize / boundingSize;
+    mesh.scale.setScalar(scale);
+    
+    // Update stored size after scaling
+    modelSize = targetSize;
+    
+    console.log(`Model centered at mass center: ${massCenter.x.toFixed(2)}, ${massCenter.y.toFixed(2)}, ${massCenter.z.toFixed(2)}`);
+    console.log(`Model scaled by factor: ${scale.toFixed(4)}`);
+    
+    return { 
+      center: new THREE.Vector3(0, 0, 0), // After centering, it's at origin
+      size: targetSize,
+      originalMassCenter: massCenter,
+      originalSize: boundingSize,
+      scaleFactor: scale
+    };
+  }
+
+  function setupBirdEyeView() {
+    // ScanNet coordinate system: X-right, Y-up, Z-forward
+    const height = modelSize * 1.0;
+    
+    // Set camera position directly above the scene center
+    camera.position.set(0, 0, height);
+    
+    // Look down at the scene center
+    controls.target.set(0, 0, 0);
+    
+    // Set the up vector for proper orientation
+    camera.up.set(0, 1, 0);
+    
+    // Update controls
+    controls.update();
+    
+    console.log(`Bird's eye view setup: Camera at (0, ${height}, 0) looking down at (0, 0, 0)`);
+  }
+
+  async function loadPLYModel(modelPath, sceneId) {
+    showLoading();
+    
+    // Remove existing model
+    if (currentModel) {
+      scene.remove(currentModel);
+      currentModel = null;
+    }
+    
+    try {
+      // Load alignment matrix first
+      const alignmentMatrix = await loadAlignmentMatrix(sceneId);
+      currentAlignmentMatrix = alignmentMatrix;
+      
+      // Load PLY model
+      plyLoader.load(
+        modelPath,
+        function(geometry) {
+          console.log('PLY model loaded successfully');
+          console.log(`Geometry has ${geometry.attributes.position.count} vertices`);
+          
+          // Apply alignment transformation to geometry
+          applyAlignmentToGeometry(geometry, alignmentMatrix);
+          
+          // Compute normals if they don't exist
+          if (!geometry.attributes.normal) {
+            geometry.computeVertexNormals();
+          }
+          
+          // Create material with better lighting response
+          let material;
+          if (geometry.attributes.color) {
+            material = new THREE.MeshLambertMaterial({ 
+              vertexColors: true,
+              side: THREE.DoubleSide
+            });
+          } else {
+            material = new THREE.MeshLambertMaterial({ 
+              color: 0x888888,
+              side: THREE.DoubleSide
+            });
+          }
+          
+          // Create mesh
+          const mesh = new THREE.Mesh(geometry, material);
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
+          
+          // Center and scale the model using mass center - 使用新的函数！
+          const modelInfo = centerAndScaleModel(mesh);
+          
+          currentModel = mesh;
+          scene.add(currentModel);
+          
+          // Setup bird's eye view camera
+          setupBirdEyeView();
+          
+          // Log model statistics
+          console.log('Model statistics:', {
+            vertices: geometry.attributes.position.count,
+            massCenter: modelInfo.originalMassCenter,
+            boundingSize: modelInfo.originalSize,
+            scaleFactor: modelInfo.scaleFactor,
+            samplesUsed: modelInfo.samplesUsed
+          });
+          
+          hideLoading();
+        },
+        function(progress) {
+          if (progress.total > 0) {
+            console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+          }
+        },
+        function(error) {
+          console.error('Error loading PLY model:', error);
+          hideLoading();
+          
+          // Load placeholder if PLY fails
+          loadPlaceholder3DScene();
+        }
+      );
+      
+    } catch (error) {
+      console.error('Error in loadPLYModel:', error);
+      hideLoading();
+      loadPlaceholder3DScene();
+    }
+  }
+
+  function loadPlaceholder3DScene() {
+    console.log('Loading placeholder 3D scene');
+    
+    // Remove existing model
+    if (currentModel) {
+      scene.remove(currentModel);
+    }
+    
+    // Create placeholder 3D objects following ScanNet conventions
+    const group = new THREE.Group();
+    
+    // Sofa (box)
+    const sofaGeometry = new THREE.BoxGeometry(2, 0.8, 1);
+    const sofaMaterial = new THREE.MeshLambertMaterial({ color: 0x8B4513 });
+    const sofa = new THREE.Mesh(sofaGeometry, sofaMaterial);
+    sofa.position.set(-2, 0.4, 0);
+    sofa.castShadow = true;
+    sofa.receiveShadow = true;
+    group.add(sofa);
+    
+    // Coffee table (cylinder)
+    const tableGeometry = new THREE.CylinderGeometry(0.8, 0.8, 0.1);
+    const tableMaterial = new THREE.MeshLambertMaterial({ color: 0xDEB887 });
+    const table = new THREE.Mesh(tableGeometry, tableMaterial);
+    table.position.set(0, 0.05, 0);
+    table.castShadow = true;
+    table.receiveShadow = true;
+    group.add(table);
+    
+    // TV stand (box)
+    const tvStandGeometry = new THREE.BoxGeometry(1.5, 0.6, 0.4);
+    const tvStandMaterial = new THREE.MeshLambertMaterial({ color: 0x2F4F4F });
+    const tvStand = new THREE.Mesh(tvStandGeometry, tvStandMaterial);
+    tvStand.position.set(2, 0.3, 0);
+    tvStand.castShadow = true;
+    tvStand.receiveShadow = true;
+    group.add(tvStand);
+    
+    // Add a floor plane at Y=0
+    const planeGeometry = new THREE.PlaneGeometry(8, 8);
+    const planeMaterial = new THREE.MeshLambertMaterial({ 
+      color: 0xf0f0f0,
+      transparent: true,
+      opacity: 0.8
+    });
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.rotation.x = -Math.PI / 2;
+    plane.position.y = 0;
+    plane.receiveShadow = true;
+    group.add(plane);
+    
+    currentModel = group;
+    scene.add(currentModel);
+    
+    // Center and setup camera for placeholder
+    centerAndScaleModel(group);
+    setupBirdEyeView();
+    
+    hideLoading();
+  }
+
+  function loadTripletData(sceneId, tripletId) {
+    const data = tripAlignData[sceneId]?.[tripletId];
+    if (!data) {
+      console.warn(`No data found for scene: ${sceneId}, triplet: ${tripletId}`);
+      return;
+    }
+    
+    console.log(`Loading triplet data: ${sceneId} - ${tripletId}`);
+    
+    // Update 2D image
+    const img = document.getElementById('tripAlign2DView');
+    img.src = data['2d_image'];
+    img.onerror = function() {
+      console.warn('Failed to load 2D image, using placeholder');
+      this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPjJEIFZpZXcgUGxhY2Vob2xkZXI8L3RleHQ+PC9zdmc+';
+    };
+    
+    // Update text description
+    document.getElementById('tripAlignText').textContent = data.text;
+    
+    // Update info
+    document.getElementById('cameraInfo').textContent = data.camera_info;
+    document.getElementById('objectInfo').textContent = data.objects;
+    
+    // Check if we need to reload the 3D model (only if scene changed)
+    const modelPath = data['3d_model'];
+    if (currentSceneId !== sceneId) {
+      currentSceneId = sceneId;
+      
+      // Load 3D model with alignment
+      if (modelPath && modelPath.endsWith('.ply')) {
+        loadPLYModel(modelPath, sceneId);
+      } else {
+        console.warn('No valid PLY model found, loading placeholder');
+        loadPlaceholder3DScene();
+      }
+    } else {
+      console.log('Same scene, skipping 3D model reload');
+    }
+  }
+
+  function populateSceneSelector() {
+    const sceneSelector = document.getElementById('tripAlignSceneSelector');
+    
+    // Clear existing options
+    sceneSelector.innerHTML = '';
+    
+    // Populate with scene names from data
+    Object.keys(tripAlignData).forEach(sceneId => {
+      const option = document.createElement('option');
+      option.value = sceneId;
+      option.textContent = sceneId;
+      sceneSelector.appendChild(option);
+    });
+    
+    console.log('Scene selector populated with', Object.keys(tripAlignData).length, 'scenes');
+  }
+
+  function updateTripletOptions(sceneId) {
+    const tripletSelector = document.getElementById('tripAlignTripletSelector');
+    const triplets = tripAlignData[sceneId];
+    
+    // Clear existing options
+    tripletSelector.innerHTML = '';
+    
+    if (triplets) {
+      Object.keys(triplets).forEach((tripletId, index) => {
+        const option = document.createElement('option');
+        option.value = tripletId;
+        option.textContent = `Triplet ${index + 1}`;
+        tripletSelector.appendChild(option);
+      });
+    }
+    
+    // Load first triplet
+    if (tripletSelector.options.length > 0) {
+      tripletSelector.selectedIndex = 0;
+      loadTripletData(sceneId, tripletSelector.value);
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing TripAlign visualization...');
+    
+    // Initialize 3D scene
+    init3DScene();
+    
+    // Populate scene selector from data
+    populateSceneSelector();
+    
+    // Load initial data (first scene)
+    const firstSceneId = Object.keys(tripAlignData)[0];
+    if (firstSceneId) {
+      document.getElementById('tripAlignSceneSelector').value = firstSceneId;
+      updateTripletOptions(firstSceneId);
+    }
+    
+    // Scene selector event listener
+    document.getElementById('tripAlignSceneSelector').addEventListener('change', function(e) {
+      const sceneId = e.target.value;
+      updateTripletOptions(sceneId);
+    });
+    
+    // Triplet selector event listener
+    document.getElementById('tripAlignTripletSelector').addEventListener('change', function(e) {
+      const sceneId = document.getElementById('tripAlignSceneSelector').value;
+      const tripletId = e.target.value;
+      loadTripletData(sceneId, tripletId);
+    });
+    
+    // Debug axes toggle
+    document.getElementById('showAxes').addEventListener('change', function(e) {
+      toggleAxes(e.target.checked);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      const canvas = document.getElementById('tripAlign3DScene');
+      const width = canvas.offsetWidth;
+      const height = canvas.offsetHeight;
+      
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    });
+    
+    console.log('TripAlign visualization initialized successfully');
+  });
+</script>
+
+<!-- End TripAlign Dataset Showcase -->
 
 
 <!--BibTex citation -->
