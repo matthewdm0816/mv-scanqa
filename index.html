@@ -275,6 +275,8 @@
                 </p>
                 <p class="has-text-centered is-size-7">
                   <em>Drag to rotate • Scroll to zoom • Right-click to pan</em>
+                </br>
+                  <strong>Note:</strong> The 3D model (~100MB) may take minutes to load from HuggingFace.
                 </p>
               </div>
             </div>
@@ -351,8 +353,9 @@
 
 <!-- JavaScript for TripAlign Visualization -->
 <script>
+  const HF_REPO = "https://huggingface.co/datasets/kmichiru/scannet_samples/resolve/main"
   // Updated data structure for TripAlign
-  const tripAlignData = {
+  let tripAlignData = {
     "scene0000_00": {
       "triplet_0": {
         "2d_image": "static/tripalign/images/scene0000_00/color/0.jpg",
@@ -395,6 +398,17 @@
       }
     }
   };
+
+  // Replace static file with HF_REPO
+  for (const sceneId in tripAlignData) {
+    for (const tripletId in tripAlignData[sceneId]) {
+      const triplet = tripAlignData[sceneId][tripletId];
+      let scene_file = triplet["3d_model"].split("/").at(-1);
+      triplet["3d_model"] = HF_REPO + "/" + scene_file;
+
+      console.log(`Updated 3D model path for ${sceneId} ${tripletId}: ${triplet["3d_model"]}`);
+    }
+  }
 
   // 3D Scene variables
   let scene, camera, renderer, controls;
