@@ -229,6 +229,144 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- MV-ScanQA Interactive Showcase -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">MV-ScanQA Interactive Examples</h2>
+        <div class="content has-text-justified">
+          <p>
+            Explore how MV-ScanQA transforms single-view questions into multi-view reasoning challenges. 
+            Each example shows the original questions and the synthesized multi-view question.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">Select Scene</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="mvScanQASceneSelector">
+                <!-- Options will be populated by JavaScript -->
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="field">
+          <label class="label">Select Question Example</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="mvScanQAExampleSelector">
+                <!-- Options will be populated by JavaScript -->
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question Display -->
+    <div class="box" style="margin-top: 2rem;">
+      <div class="columns">
+        <!-- Original Questions Column -->
+        <div class="column is-half">
+          <h4 class="title is-5 has-text-centered">Original Single-View Questions</h4>
+          
+          <div class="box has-background-light">
+            <p class="has-text-weight-semibold has-text-info">Question 1:</p>
+            <p id="mvQuestion1" class="mb-2"></p>
+            <p class="has-text-grey-dark"><strong>Answer:</strong> <span id="mvAnswer1"></span></p>
+            <p class="has-text-grey"><strong>Objects:</strong> <span id="mvObjects1"></span></p>
+          </div>
+          
+          <div class="box has-background-light" style="margin-top: 1rem;">
+            <p class="has-text-weight-semibold has-text-info">Question 2:</p>
+            <p id="mvQuestion2" class="mb-2"></p>
+            <p class="has-text-grey-dark"><strong>Answer:</strong> <span id="mvAnswer2"></span></p>
+            <p class="has-text-grey"><strong>Objects:</strong> <span id="mvObjects2"></span></p>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="column is-narrow has-text-centered" style="display: flex; align-items: center;">
+          <span class="icon is-large has-text-primary">
+            <i class="fas fa-arrow-right fa-2x"></i>
+          </span>
+        </div>
+
+        <!-- Multi-View Question Column -->
+        <div class="column is-half">
+          <h4 class="title is-5 has-text-centered">Synthesized Multi-View Question</h4>
+          
+          <div class="box has-background-primary-light">
+            <p class="has-text-weight-semibold has-text-primary">Multi-View Question:</p>
+            <p id="mvNewQuestion" class="mb-2 is-size-5"></p>
+            <p class="has-text-grey-dark"><strong>Answer:</strong> <span id="mvNewAnswer"></span></p>
+            <p class="has-text-grey"><strong>All Related Objects:</strong> <span id="mvAllObjects"></span></p>
+            
+            <div class="tags" style="margin-top: 1rem;">
+              <span class="tag is-medium" id="mvViewsTag">
+                <span class="icon">
+                  <i class="fas fa-eye"></i>
+                </span>
+                <span id="mvViewsRequired"></span>
+              </span>
+              <span class="tag is-medium is-info">
+                <span class="icon">
+                  <i class="fas fa-cube"></i>
+                </span>
+                <span id="mvObjectCount"></span>
+              </span>
+            </div>
+          </div>
+
+          <!-- View Overlap Statistics -->
+          <div class="box has-background-light" style="margin-top: 1rem;">
+            <p class="has-text-weight-semibold">View Overlap Statistics</p>
+            <div class="columns is-mobile">
+              <div class="column has-text-centered">
+                <p class="has-text-grey">Min</p>
+                <p class="has-text-weight-bold" id="mvOverlapMin"></p>
+              </div>
+              <div class="column has-text-centered">
+                <p class="has-text-grey">Mean</p>
+                <p class="has-text-weight-bold" id="mvOverlapMean"></p>
+              </div>
+              <div class="column has-text-centered">
+                <p class="has-text-grey">Max</p>
+                <p class="has-text-weight-bold" id="mvOverlapMax"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Scene Viewer -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full">
+        <div class="box">
+          <h4 class="title is-5 has-text-centered">3D Scene Visualization</h4>
+          <div id="mvScanQA3DContainer" style="width: 100%; height: 400px; position: relative;">
+            <!-- 3D scene will be rendered here -->
+          </div>
+          <p class="has-text-centered has-text-grey" style="margin-top: 0.5rem;">
+            <i class="fas fa-mouse"></i> Drag to rotate • Scroll to zoom • Right-click to pan
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- TripAlign Dataset Showcase -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -289,7 +427,7 @@
               </figure>
               <div class="content" style="margin-top: 1rem;">
                 <p class="has-text-centered is-size-7">
-                  <strong>Camera Position:</strong> <span id="cameraInfo">Position: (2.1, 1.5, -3.2), Rotation: (15°, -45°, 0°)</span>
+                  <strong>Frame Info:</strong> <span id="cameraInfo">Position: (2.1, 1.5, -3.2), Rotation: (15°, -45°, 0°)</span>
                 </p>
               </div>
             </div>
@@ -310,7 +448,7 @@
                 <canvas id="tripAlign3DScene" style="width: 100%; height: 300px; border-radius: 8px; background-color: #f8f9fa;"></canvas>
               </div>
               <div class="content" style="margin-top: 1rem;">
-                <p class="has-text-centered is-size-7">
+                <p class="has-text-centered is-size-7" style="display: none;">
                   <strong>Highlighted Objects:</strong> <span id="objectInfo">Sofa, Coffee Table, TV Stand</span>
                 </p>
                 <p class="has-text-centered is-size-7">
@@ -346,8 +484,8 @@
         </div>
 
         <!-- Statistics -->
-        <div class="columns is-multiline" style="margin-top: 2rem;">
-          <div class="column is-3">
+        <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+          <div class="column is-3 is-offset-1-tablet">
             <div class="box has-text-centered">
               <p class="title is-4 has-text-primary">1M</p>
               <p class="subtitle is-6">Total Triplets</p>
@@ -355,23 +493,18 @@
           </div>
           <div class="column is-3">
             <div class="box has-text-centered">
-              <p class="title is-4 has-text-info">650</p>
+              <p class="title is-4 has-text-info">1513</p>
               <p class="subtitle is-6">Unique Scenes</p>
             </div>
           </div>
           <div class="column is-3">
             <div class="box has-text-centered">
               <p class="title is-4 has-text-success">3.2</p>
-              <p class="subtitle is-6">Avg Objects per Triplet</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="box has-text-centered">
-              <p class="title is-4 has-text-warning">24.5</p>
-              <p class="subtitle is-6">Avg Words per Description</p>
+              <p class="subtitle is-6">Avg. Objects in Triplet <br/> (Well Visible)</p>
             </div>
           </div>
         </div>
+
 
         <div class="content has-text-centered" style="margin-top: 1rem;">
           <p class="is-size-7 has-text-grey">
@@ -388,6 +521,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+<script src="static/js/shared3DSceneManager.js"></script>
+
 
 <!-- JavaScript for TripAlign Visualization -->
 <script>
@@ -395,7 +530,7 @@
   const HF_REPO = "https://huggingface.co/datasets/kmichiru/scannet_samples/resolve/main"
 
   // Updated data structure for TripAlign
-  let tripAlignData = {
+  const tripAlignDataBackup = {
     "scene0000_00": {
       "triplet_0": {
         "2d_image": "0",
@@ -438,6 +573,83 @@
       }
     }
   };
+
+  let tripAlignData = {};
+  let mvScanQAData = {};
+
+  // 添加加载JSON数据的函数
+  async function loadTripAlignAnnotations() {
+    try {
+      const response = await fetch('static/tripalign/sampled_annotations.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const annotations = await response.json();
+      console.log(`Loaded ${annotations.length} annotations`);
+      
+      // 将数据转换为原来的格式
+      tripAlignData = {};
+      
+      // 按场景分组
+      annotations.forEach((item, index) => {
+        const sceneId = item.scene_id;
+        
+        if (!tripAlignData[sceneId]) {
+          tripAlignData[sceneId] = {};
+        }
+        
+        // 计算该场景中的triplet索引
+        const tripletCount = Object.keys(tripAlignData[sceneId]).length;
+        const tripletId = `triplet_${tripletCount}`;
+        
+        // 提取frame编号（去掉.jpg后缀）
+        const frameNumber = item.frame_id.replace('.jpg', '');
+
+        // If not itm_score, set to 'N/A', otherwise set to 3 decimal places
+        if (typeof item.itm_score !== 'number') {
+          item.itm_score = 'N/A';
+        } else if (item.itm_score < 0 || item.itm_score > 1) {
+          item.itm_score = 'N/A';
+        } else {
+          item.itm_score = item.itm_score.toFixed(3);
+        }
+        
+        tripAlignData[sceneId][tripletId] = {
+          "2d_image": `static/tripalign/images/${sceneId}/color/${frameNumber}.jpg`,
+          "3d_model": `${HF_REPO}/${sceneId}_vh_clean.ply`,
+          "text": item.description,
+          "camera_info": `Frame: ${item.frame_id}, ITM Score: ${item.itm_score}`,
+          "objects": "Objects detected in scene" // 可以后续从描述中提取
+        };
+      });
+      
+      console.log('Processed tripAlign data:', tripAlignData);
+      
+      // 更新场景选择器
+      populateSceneSelector();
+      
+      // 加载第一个场景
+      const firstSceneId = Object.keys(tripAlignData)[0];
+      if (firstSceneId) {
+        document.getElementById('tripAlignSceneSelector').value = firstSceneId;
+        updateTripletOptions(firstSceneId);
+      }
+      
+    } catch (error) {
+      console.error('Error loading annotations:', error);
+      
+      // 如果加载失败，使用备用数据
+      tripAlignData = tripAlignDataBackup;
+
+      populateSceneSelector();
+      const firstSceneId = Object.keys(tripAlignData)[0];
+      if (firstSceneId) {
+        document.getElementById('tripAlignSceneSelector').value = firstSceneId;
+        updateTripletOptions(firstSceneId);
+      }
+    }
+  }
 
   // Replace static file with HF_REPO
   for (const sceneId in tripAlignData) {
@@ -1239,13 +1451,148 @@
     return status;
   }
 
+
+  // 加载MV-ScanQA数据
+  async function loadMVScanQAData() {
+    try {
+      const response = await fetch('static/mvscanqa/sampled_mvscanqa.json');
+      const data = await response.json();
+      
+      // 按场景组织数据
+      mvScanQAData = {};
+      data.forEach((item, index) => {
+        const sceneId = item.scene_id;
+        if (!mvScanQAData[sceneId]) {
+          mvScanQAData[sceneId] = [];
+        }
+        mvScanQAData[sceneId].push(item);
+      });
+      
+      // 填充场景选择器
+      const sceneSelector = document.getElementById('mvScanQASceneSelector');
+      sceneSelector.innerHTML = '';
+      Object.keys(mvScanQAData).forEach(sceneId => {
+        const option = document.createElement('option');
+        option.value = sceneId;
+        option.textContent = sceneId;
+        sceneSelector.appendChild(option);
+      });
+      
+      // 加载第一个场景
+      if (Object.keys(mvScanQAData).length > 0) {
+        const firstScene = Object.keys(mvScanQAData)[0];
+        sceneSelector.value = firstScene;
+        updateMVScanQAExamples(firstScene);
+      }
+      
+    } catch (error) {
+      console.error('Error loading MV-ScanQA data:', error);
+    }
+  }
+
+  // 更新示例选择器
+  function updateMVScanQAExamples(sceneId) {
+    const exampleSelector = document.getElementById('mvScanQAExampleSelector');
+    exampleSelector.innerHTML = '';
+    
+    if (mvScanQAData[sceneId]) {
+      mvScanQAData[sceneId].forEach((item, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `Example ${index + 1}: ${item.new_question.substring(0, 50)}...`;
+        exampleSelector.appendChild(option);
+      });
+      
+      // 显示第一个示例
+      if (mvScanQAData[sceneId].length > 0) {
+        displayMVScanQAExample(sceneId, 0);
+      }
+    }
+    
+    // 加载3D场景
+    loadMVScanQA3DScene(sceneId);
+  }
+
+  // 显示具体示例
+  function displayMVScanQAExample(sceneId, exampleIndex) {
+    const example = mvScanQAData[sceneId][exampleIndex];
+    
+    // 显示原始问题1
+    document.getElementById('mvQuestion1').textContent = example.question_1;
+    document.getElementById('mvAnswer1').textContent = example.answers_1[0];
+    document.getElementById('mvObjects1').textContent = example.object_names_1.join(', ');
+    
+    // 显示原始问题2
+    document.getElementById('mvQuestion2').textContent = example.question_2;
+    document.getElementById('mvAnswer2').textContent = example.answers_2[0];
+    document.getElementById('mvObjects2').textContent = example.object_names_2.join(', ');
+    
+    // 显示多视角问题
+    document.getElementById('mvNewQuestion').textContent = example.new_question;
+    document.getElementById('mvNewAnswer').textContent = example.new_answer;
+    
+    // 合并并去重对象列表
+    const allObjectIds = [...new Set([...example.object_ids_1, ...example.object_ids_2])];
+    const allObjectNames = [...new Set([...example.object_names_1, ...example.object_names_2])];
+    document.getElementById('mvAllObjects').textContent = allObjectNames.join(', ');
+    document.getElementById('mvObjectCount').textContent = `${allObjectIds.length} objects`;
+    
+    // 显示视角需求
+    const viewsRequired = example.n_views_can_solve + 1; // 加1因为是减过的
+    document.getElementById('mvViewsRequired').textContent = `${viewsRequired} view${viewsRequired > 1 ? 's' : ''} required`;
+    
+    // 更新视角标签颜色
+    const viewsTag = document.getElementById('mvViewsTag');
+    viewsTag.className = 'tag is-medium';
+    if (viewsRequired === 1) {
+      viewsTag.classList.add('is-success');
+    } else if (viewsRequired === 2) {
+      viewsTag.classList.add('is-warning');
+    } else {
+      viewsTag.classList.add('is-danger');
+    }
+    
+    // 显示重叠统计
+    document.getElementById('mvOverlapMin').textContent = example.best_view_overlap_min.toFixed(3);
+    document.getElementById('mvOverlapMean').textContent = example.best_view_overlap_mean.toFixed(3);
+    document.getElementById('mvOverlapMax').textContent = example.best_view_overlap_max.toFixed(3);
+  }
+
+  // 3D场景加载函数
+  function loadMVScanQA3DScene(sceneId) {
+    // 这里可以复用之前的3D加载代码
+    // 或者创建一个新的Three.js场景
+    const container = document.getElementById('mvScanQA3DContainer');
+    container.innerHTML = '<p class="has-text-centered" style="padding: 100px;">Loading 3D scene...</p>';
+    
+    // TODO: 实际的3D场景加载代码
+  }
+
+  // 事件监听器
+  document.addEventListener('DOMContentLoaded', async function() {
+    await loadMVScanQAData();
+    
+    // 场景选择器
+    document.getElementById('mvScanQASceneSelector').addEventListener('change', function(e) {
+      updateMVScanQAExamples(e.target.value);
+    });
+    
+    // 示例选择器
+    document.getElementById('mvScanQAExampleSelector').addEventListener('change', function(e) {
+      const sceneId = document.getElementById('mvScanQASceneSelector').value;
+      displayMVScanQAExample(sceneId, parseInt(e.target.value));
+    });
+  });
+
   // Initialize when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', async function() {
     console.log('Initializing TripAlign visualization...');
     
     // Initialize 3D scene
     init3DScene();
-    
+
+    await loadTripAlignAnnotations();
+  
     // Populate scene selector from data
     populateSceneSelector();
     
@@ -1287,10 +1634,171 @@
     
     console.log('TripAlign visualization initialized successfully');
   });
+
+  // document.querySelectorAll('.figure-zoom').forEach(img => {
+  //   img.addEventListener('click', function() {
+  //     // 创建模态框显示大图
+  //     const modal = document.createElement('div');
+  //     modal.className = 'modal is-active';
+  //     modal.innerHTML = `
+  //       <div class="modal-background" onclick="this.parentElement.remove()"></div>
+  //       <div class="modal-content">
+  //         <p class="image">
+  //           <img src="${this.src}" alt="${this.alt}">
+  //         </p>
+  //       </div>
+  //       <button class="modal-close is-large" onclick="this.parentElement.remove()"></button>
+  //     `;
+  //     document.body.appendChild(modal);
+  //   });
+  // });
 </script>
 
 <!-- End TripAlign Dataset Showcase -->
 
+<!-- MV-ScanQA Dataset Examples -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">MV-ScanQA Dataset Examples (Static)</h2>
+        <div class="content has-text-justified">
+          <p>
+            MV-ScanQA challenges models with questions that require reasoning across multiple viewpoints. 
+            Below are examples showing how questions necessitate integrating information from different perspectives 
+            and distant objects to arrive at the correct answer.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Figure Display -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full">
+        <figure class="image">
+          <img src="static/images/qual-mvscanqa.png"
+               alt="MV-ScanQA Dataset Examples" 
+               style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </figure>
+        <div class="content has-text-centered" style="margin-top: 1rem;">
+          <p class="is-size-6 has-text-grey">
+            <em>Figure: Examples from MV-ScanQA showing multi-view questions and their corresponding 3D scenes. 
+            Questions are designed to require information integration from multiple viewpoints.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Statistics -->
+    <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-primary">68%</p>
+          <p class="subtitle is-6">Multi-view Questions</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-info">3.2k</p>
+          <p class="subtitle is-6">Total Questions</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-success">706</p>
+          <p class="subtitle is-6">3D Scenes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TripAlign Dataset Examples -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TripAlign Dataset Examples (Static)</h2>
+        <div class="content has-text-justified">
+          <p>
+            TripAlign provides rich multi-object contextual alignments between 2D views, a set of visible 3D objects, and natural language descriptions. 
+            Each triplet captures semantically related objects with their spatial relationships.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Figure Display -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full">
+        <figure class="image">
+          <img src="static/images/qual-vc.png"
+               alt="TripAlign Dataset Examples" 
+               style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </figure>
+        <div class="content has-text-centered" style="margin-top: 1rem;">
+          <p class="is-size-6 has-text-grey">
+            <em>Figure: TripAlign examples showing the alignment between 2D views, 3D object groups, and textual descriptions. 
+            Each triplet provides rich contextual information about multiple related objects.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dataset Characteristics -->
+    <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+      <div class="column is-4">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-warning">Multi-Object</p>
+          <p class="subtitle is-6">Groups of contextually related objects</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-danger">View-Grounded</p>
+          <p class="subtitle is-6">Explicit 2D-3D correspondence</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="box has-text-centered">
+          <p class="title is-5 has-text-link">Low-Cost</p>
+          <p class="subtitle is-6">Automated generation pipeline</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 在页面某处添加缓存状态 -->
+<div class="notification is-info is-light" style="position: fixed; bottom: 20px; right: 20px; z-index: 100; display: none;" id="cacheStatus">
+  <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+  <p><strong>3D Cache Status:</strong></p>
+  <p>Cached Scenes: <span id="cachedCount">0</span></p>
+  <p>Memory Usage: <span id="cacheMemory">0 MB</span></p>
+</div>
+
+<script>
+  // 显示缓存状态
+  function updateCacheStatus() {
+    const cachedCount = sceneManager.cache.size;
+    document.getElementById('cachedCount').textContent = cachedCount;
+    
+    // 估算内存使用
+    let totalMemory = 0;
+    sceneManager.cache.forEach((data) => {
+      // 粗略估算
+      totalMemory += JSON.stringify(data).length / 1024 / 1024;
+    });
+    document.getElementById('cacheMemory').textContent = totalMemory.toFixed(2) + ' MB';
+    
+    if (cachedCount > 0) {
+      document.getElementById('cacheStatus').style.display = 'block';
+    }
+  }
+
+  // 定期更新缓存状态
+  setInterval(updateCacheStatus, 5000);
+</script>
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
