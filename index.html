@@ -50,6 +50,42 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- Add custom styles for progress bar -->
+  <style>
+    .progress-container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+      display: none;
+    }
+    
+    .progress-container .progress {
+      margin-top: 10px;
+    }
+    
+    .progress-text {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #363636;
+    }
+    
+    .progress-note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #7a7a7a;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -264,8 +300,12 @@
             <div class="box">
               <h4 class="title is-5 has-text-centered">3D Scene</h4>
               <div style="position: relative;">
-                <div id="tripAlignLoading" style="position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); z-index: 10; display: none;">
-                  <div class="button is-loading is-large is-white" style="border: none;"></div>
+                <!-- Updated loading container with progress bar -->
+                <div id="tripAlignLoading" class="progress-container">
+                  <div class="progress-text">Loading 3D Scene...</div>
+                  <progress id="loadingProgress" class="progress is-primary" value="0" max="100">0%</progress>
+                  <div class="progress-text"><span id="progressPercent">0</span>%</div>
+                  <div class="progress-note">The 3D scene (100~500MB) may take minutes to load from HuggingFace.</div>
                 </div>
                 <canvas id="tripAlign3DScene" style="width: 100%; height: 300px; border-radius: 8px; background-color: #f8f9fa;"></canvas>
               </div>
@@ -275,8 +315,6 @@
                 </p>
                 <p class="has-text-centered is-size-7">
                   <em>Drag to rotate • Scroll to zoom • Right-click to pan</em>
-                </br>
-                  <strong>Note:</strong> The 3D model (~100MB) may take minutes to load from HuggingFace.
                 </p>
               </div>
             </div>
@@ -353,45 +391,47 @@
 
 <!-- JavaScript for TripAlign Visualization -->
 <script>
+  // const HF_REPO = "https://huggingface.co/datasets/kmichiru/scannet_samples/resolve/main"
   const HF_REPO = "https://huggingface.co/datasets/kmichiru/scannet_samples/resolve/main"
+
   // Updated data structure for TripAlign
   let tripAlignData = {
     "scene0000_00": {
       "triplet_0": {
-        "2d_image": "static/tripalign/images/scene0000_00/color/0.jpg",
-        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "2d_image": "0",
+        // "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
         "text": "In this cozy living room scene, there is a comfortable brown leather sofa positioned against the wall, with a wooden coffee table placed in front of it. The coffee table has some magazines and a small plant on top. To the right, there's a modern TV stand holding a flat-screen television. The spatial arrangement creates a typical entertainment area where the sofa faces the TV, with the coffee table serving as a functional surface between them.",
         "camera_info": "Position: (2.1, 1.5, -3.2), Rotation: (15°, -45°, 0°)",
         "objects": "Sofa, Coffee Table, TV Stand"
       },
       "triplet_1": {
-        "2d_image": "static/tripalign/images/scene0000_00/color/20.jpg",
-        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "2d_image": "20",
+        // "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
         "text": "From this angle, we can see the dining area adjacent to the living room. A rectangular wooden dining table is surrounded by four matching chairs. Above the table hangs a modern pendant light fixture. The chairs are neatly arranged around the table, creating an inviting space for family meals and gatherings.",
         "camera_info": "Position: (-1.8, 2.0, 1.5), Rotation: (20°, 135°, 0°)",
         "objects": "Dining Table, Chairs, Pendant Light"
       },
       "triplet_2": {
-        "2d_image": "static/tripalign/images/scene0000_00/color/40.jpg",
-        "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
+        "2d_image": "40",
+        // "3d_model": "static/tripalign/scene/scene0000_00/scene0000_00_vh_clean.ply",
         "text": "This view captures the corner reading nook with a comfortable armchair positioned next to a tall bookshelf. A small side table holds a reading lamp and a cup of coffee. The bookshelf is filled with various books and decorative items, creating a cozy atmosphere for reading and relaxation.",
         "camera_info": "Position: (3.5, 1.2, 2.8), Rotation: (10°, -60°, 0°)",
         "objects": "Armchair, Bookshelf, Side Table, Reading Lamp"
       }
     },
-    "scene0001_00": {
+    "scene0013_00": {
       "triplet_0": {
-        "2d_image": "static/tripalign/images/scene0001_00/color/0.jpg",
-        "3d_model": "static/tripalign/scene/scene0001_00/scene0001_00_vh_clean.ply",
+        "2d_image": "0",
+        // "3d_model": "static/tripalign/scene/scene0001_00/scene0001_00_vh_clean.ply",
         "text": "The modern kitchen features a large central island with bar stools arranged along one side. The island serves as both a preparation area and casual dining space. Pendant lights hang above the island, providing focused illumination for cooking and dining activities.",
         "camera_info": "Position: (0.5, 2.5, -4.0), Rotation: (25°, 0°, 0°)",
         "objects": "Kitchen Island, Bar Stools, Pendant Lights"
       }
     },
-    "scene0002_00": {
+    "scene0029_00": {
       "triplet_0": {
-        "2d_image": "static/tripalign/images/scene0002_00/color/0.jpg",
-        "3d_model": "static/tripalign/scene/scene0002_00/scene0002_00_vh_clean.ply",
+        "2d_image": "0",
+        // "3d_model": "static/tripalign/scene/scene0002_00/scene0002_00_vh_clean.ply",
         "text": "A spacious bedroom with a queen-size bed positioned against the main wall. Two nightstands flank the bed, each topped with matching table lamps. A large dresser sits opposite the bed, with a mirror mounted above it.",
         "camera_info": "Position: (4.2, 1.8, -2.1), Rotation: (12°, -30°, 0°)",
         "objects": "Bed, Nightstands, Dresser, Mirror"
@@ -403,8 +443,10 @@
   for (const sceneId in tripAlignData) {
     for (const tripletId in tripAlignData[sceneId]) {
       const triplet = tripAlignData[sceneId][tripletId];
-      let scene_file = triplet["3d_model"].split("/").at(-1);
+      // let scene_file = triplet["3d_model"].split("/").at(-1);
+      const scene_file = `${sceneId}_vh_clean.ply`;
       triplet["3d_model"] = HF_REPO + "/" + scene_file;
+      triplet["2d_image"] = `static/tripalign/images/${sceneId}/color/${triplet["2d_image"]}.jpg`;
 
       console.log(`Updated 3D model path for ${sceneId} ${tripletId}: ${triplet["3d_model"]}`);
     }
@@ -421,8 +463,10 @@
 
   // Alignment matrix cache
   const alignmentMatrixCache = {};
-
-
+  
+  // Geometry cache for loaded models
+  let geometryCache = {};
+  let loadingPromises = {};
 
   function init3DScene() {
     const canvas = document.getElementById('tripAlign3DScene');
@@ -480,8 +524,8 @@
     console.log('3D Scene initialized successfully');
   }
 
-    // Calculate mass center (average position) of all vertices with sampling for large point clouds
-    function calculateMassCenter(geometry) {
+  // Calculate mass center (average position) of all vertices with sampling for large point clouds
+  function calculateMassCenter(geometry) {
     const positions = geometry.attributes.position;
     const vertexCount = positions.count;
     
@@ -651,10 +695,19 @@
 
   function showLoading() {
     document.getElementById('tripAlignLoading').style.display = 'block';
+    updateProgress(0);
   }
 
   function hideLoading() {
     document.getElementById('tripAlignLoading').style.display = 'none';
+  }
+
+  function updateProgress(percent) {
+    const progressBar = document.getElementById('loadingProgress');
+    const progressText = document.getElementById('progressPercent');
+    
+    progressBar.value = percent;
+    progressText.textContent = Math.round(percent);
   }
 
   // Load alignment matrix from scene text file
@@ -740,6 +793,65 @@
     console.log('Applied alignment transformation to geometry');
   }
 
+  function downsampleGeometry(geometry, maxVertices = 500_0000) {
+    const positions = geometry.attributes.position;
+    const vertexCount = positions.count;
+    
+    if (vertexCount <= maxVertices) {
+      console.log(`Geometry has ${vertexCount} vertices, no downsampling needed`);
+      return geometry;
+    }
+    
+    // 计算降采样率
+    const sampleRate = maxVertices / vertexCount;
+    const sampleStep = Math.ceil(1 / sampleRate);
+    
+    console.log(`Downsampling geometry: ${vertexCount} -> ~${Math.floor(vertexCount / sampleStep)} vertices (step: ${sampleStep})`);
+    
+    // 创建新的数组来存储降采样后的数据
+    const newVertexCount = Math.floor(vertexCount / sampleStep);
+    const newPositions = new Float32Array(newVertexCount * 3);
+    
+    // 如果有颜色属性，也需要降采样
+    let newColors = null;
+    if (geometry.attributes.color) {
+      newColors = new Float32Array(newVertexCount * 3);
+    }
+    
+    // 执行降采样
+    let newIndex = 0;
+    for (let i = 0; i < vertexCount; i += sampleStep) {
+      if (newIndex >= newVertexCount) break;
+      
+      // 复制位置
+      newPositions[newIndex * 3] = positions.getX(i);
+      newPositions[newIndex * 3 + 1] = positions.getY(i);
+      newPositions[newIndex * 3 + 2] = positions.getZ(i);
+      
+      // 复制颜色（如果有）
+      if (geometry.attributes.color && newColors) {
+        const colors = geometry.attributes.color;
+        newColors[newIndex * 3] = colors.getX(i);
+        newColors[newIndex * 3 + 1] = colors.getY(i);
+        newColors[newIndex * 3 + 2] = colors.getZ(i);
+      }
+      
+      newIndex++;
+    }
+    
+    // 创建新的geometry
+    const downsampledGeometry = new THREE.BufferGeometry();
+    downsampledGeometry.setAttribute('position', new THREE.BufferAttribute(newPositions, 3));
+    
+    if (newColors) {
+      downsampledGeometry.setAttribute('color', new THREE.BufferAttribute(newColors, 3));
+    }
+    
+    console.log(`Downsampling complete: ${newIndex} vertices retained`);
+    
+    return downsampledGeometry;
+  }
+
   // Updated function to center and scale model using mass center
   function centerAndScaleModel(mesh) {
     console.log('Centering and scaling model using mass center...');
@@ -813,73 +925,145 @@
       const alignmentMatrix = await loadAlignmentMatrix(sceneId);
       currentAlignmentMatrix = alignmentMatrix;
       
-      // Load PLY model
-      plyLoader.load(
-        modelPath,
-        function(geometry) {
-          console.log('PLY model loaded successfully');
-          console.log(`Geometry has ${geometry.attributes.position.count} vertices`);
-          
-          // Apply alignment transformation to geometry
-          applyAlignmentToGeometry(geometry, alignmentMatrix);
-          
-          // Compute normals if they don't exist
-          if (!geometry.attributes.normal) {
-            geometry.computeVertexNormals();
-          }
-          
-          // Create material with better lighting response
-          let material;
-          if (geometry.attributes.color) {
-            material = new THREE.MeshLambertMaterial({ 
-              vertexColors: true,
-              side: THREE.DoubleSide
-            });
-          } else {
-            material = new THREE.MeshLambertMaterial({ 
-              color: 0x888888,
-              side: THREE.DoubleSide
-            });
-          }
-          
-          // Create mesh
-          const mesh = new THREE.Mesh(geometry, material);
-          mesh.castShadow = true;
-          mesh.receiveShadow = true;
-          
-          // Center and scale the model using mass center - 使用新的函数！
-          const modelInfo = centerAndScaleModel(mesh);
-          
-          currentModel = mesh;
-          scene.add(currentModel);
-          
-          // Setup bird's eye view camera
-          setupBirdEyeView();
-          
-          // Log model statistics
-          console.log('Model statistics:', {
-            vertices: geometry.attributes.position.count,
-            massCenter: modelInfo.originalMassCenter,
-            boundingSize: modelInfo.originalSize,
-            scaleFactor: modelInfo.scaleFactor,
-            samplesUsed: modelInfo.samplesUsed
+      // Create cache key
+      const cacheKey = `${sceneId}_${modelPath}`;
+      
+      // Check if already loading
+      if (loadingPromises[cacheKey]) {
+        console.log(`Model ${cacheKey} is already loading, waiting...`);
+        await loadingPromises[cacheKey];
+      }
+      
+      // Check cache
+      if (geometryCache[cacheKey]) {
+        console.log(`Using cached geometry for ${cacheKey}`);
+        
+        // Use cached geometry
+        const cachedGeometry = geometryCache[cacheKey];
+        
+        // Create material
+        let material;
+        if (cachedGeometry.attributes.color) {
+          material = new THREE.MeshLambertMaterial({ 
+            vertexColors: true,
+            side: THREE.DoubleSide
           });
-          
-          hideLoading();
-        },
-        function(progress) {
-          if (progress.total > 0) {
-            console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
-          }
-        },
-        function(error) {
-          console.error('Error loading PLY model:', error);
-          hideLoading();
-          
-          // Load placeholder if PLY fails
-          loadPlaceholder3DScene();
+        } else {
+          material = new THREE.MeshLambertMaterial({ 
+            color: 0x888888,
+            side: THREE.DoubleSide
+          });
         }
-      );
+        
+        // Create new mesh
+        const mesh = new THREE.Mesh(cachedGeometry, material);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        
+        // Center and scale the model
+        const modelInfo = centerAndScaleModel(mesh);
+        
+        currentModel = mesh;
+        scene.add(currentModel);
+        
+        // Setup camera
+        setupBirdEyeView();
+        
+        hideLoading();
+        
+        console.log(`Loaded model from cache: ${cacheKey}`);
+        return;
+      }
+      
+      // If not cached, create loading promise
+      loadingPromises[cacheKey] = new Promise((resolve, reject) => {
+        // Load PLY model
+        plyLoader.load(
+          modelPath,
+          function(geometry) {
+            console.log('PLY model loaded successfully');
+            console.log(`Geometry has ${geometry.attributes.position.count} vertices`);
+            
+            // Apply alignment transformation to geometry
+            applyAlignmentToGeometry(geometry, alignmentMatrix);
+
+            // Downsample geometry if too large
+            geometry = downsampleGeometry(geometry); 
+
+            
+            // Compute normals if they don't exist
+            if (!geometry.attributes.normal) {
+              geometry.computeVertexNormals();
+            }
+            
+            // Cache the processed geometry
+            geometryCache[cacheKey] = geometry;
+            console.log(`Cached geometry for ${cacheKey}, cache size: ${Object.keys(geometryCache).length}`);
+            
+            // Create material with better lighting response
+            let material;
+            if (geometry.attributes.color) {
+              material = new THREE.MeshLambertMaterial({ 
+                vertexColors: true,
+                side: THREE.DoubleSide
+              });
+            } else {
+              material = new THREE.MeshLambertMaterial({ 
+                color: 0x888888,
+                side: THREE.DoubleSide
+              });
+            }
+            
+            // Create mesh
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            
+            // Center and scale the model using mass center
+            const modelInfo = centerAndScaleModel(mesh);
+            
+            currentModel = mesh;
+            scene.add(currentModel);
+            
+            // Setup bird's eye view camera
+            setupBirdEyeView();
+            
+            // Log model statistics
+            console.log('Model statistics:', {
+              vertices: geometry.attributes.position.count,
+              massCenter: modelInfo.originalMassCenter,
+              boundingSize: modelInfo.originalSize,
+              scaleFactor: modelInfo.scaleFactor
+            });
+            
+            hideLoading();
+            
+            // Clear loading promise
+            delete loadingPromises[cacheKey];
+            resolve();
+          },
+          function(progress) {
+            if (progress.total > 0) {
+              const percent = (progress.loaded / progress.total * 100);
+              console.log('Loading progress:', percent.toFixed(1) + '%');
+              updateProgress(percent);
+            }
+          },
+          function(error) {
+            console.error('Error loading PLY model:', error);
+            hideLoading();
+            
+            // Clear loading promise
+            delete loadingPromises[cacheKey];
+            reject(error);
+            
+            // Load placeholder if PLY fails
+            loadPlaceholder3DScene();
+          }
+        );
+      });
+      
+      await loadingPromises[cacheKey];
       
     } catch (error) {
       console.error('Error in loadPLYModel:', error);
@@ -1028,6 +1212,31 @@
       tripletSelector.selectedIndex = 0;
       loadTripletData(sceneId, tripletSelector.value);
     }
+  }
+
+  // Optional: Cache management functions
+  function clearGeometryCache() {
+    // Dispose all cached geometries
+    Object.values(geometryCache).forEach(geometry => {
+      geometry.dispose();
+    });
+    geometryCache = {};
+    console.log('Geometry cache cleared');
+  }
+
+  function getCacheStatus() {
+    const status = {
+      count: Object.keys(geometryCache).length,
+      scenes: Object.keys(geometryCache),
+      totalVertices: 0
+    };
+    
+    Object.values(geometryCache).forEach(geometry => {
+      status.totalVertices += geometry.attributes.position.count;
+    });
+    
+    console.log('Cache status:', status);
+    return status;
   }
 
   // Initialize when DOM is loaded
