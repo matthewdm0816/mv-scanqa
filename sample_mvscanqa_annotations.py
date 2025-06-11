@@ -6,7 +6,9 @@ with open('static/ScanQA_mv_train_filtered.json', 'r') as f:
     full_data = json.load(f)
 
 # 指定要提取的场景
-target_scenes = ['scene0000_00', 'scene0001_00', 'scene0002_00', 'scene0013_00', 'scene0029_00']
+target_scenes = ['scene0000_00', 'scene0001_00', 'scene0002_00', 'scene0003_00', 
+                    'scene0004_00', 'scene0005_00', 'scene0006_00', 'scene0007_00',
+                    'scene0013_00', 'scene0029_00']
 
 # 按场景分组并采样
 sampled_data = []

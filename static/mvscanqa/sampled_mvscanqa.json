@@ -1,0 +1,1444 @@
+[
+  {
+    "scene_id": "scene0001_00",
+    "answers_1": [
+      "next to other coffee table surrounded by 2 couches and 2 armchairs"
+    ],
+    "object_ids_1": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      13
+    ],
+    "object_names_1": [
+      "coffee table",
+      "coffee table",
+      "couch",
+      "couch",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "Where does the coffee table sit in the sitting area?",
+    "question_id_1": "train-scene0001-6",
+    "scene_id_1": "scene0001_00",
+    "answers_2": [
+      "in middle of room"
+    ],
+    "object_ids_2": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair",
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "Where is the brown arm chair located?",
+    "question_id_2": "train-scene0001-20",
+    "scene_id_2": "scene0001_00",
+    "new_question": "In which area of the room is the brown armchair located relative to the coffee tables?",
+    "new_answer": "in middle of room, surrounded by 2 couches and 2 armchairs near the coffee tables",
+    "new_answers": [
+      "in middle of room, surrounded by 2 couches and 2 armchairs near the coffee tables"
+    ],
+    "question_id": "scene0001_00_mv_5",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.7983522252459523,
+    "best_view_overlap_min": 0.24522982863535275,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0001_00",
+    "answers_1": [
+      "wooden"
+    ],
+    "object_ids_1": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "object_names_1": [
+      "table",
+      "table",
+      "table",
+      "coffee table",
+      "coffee table"
+    ],
+    "question_1": "What kind of table is in the house?",
+    "question_id_1": "train-scene0001-1",
+    "scene_id_1": "scene0001_00",
+    "answers_2": [
+      "brown couch"
+    ],
+    "object_ids_2": [
+      6,
+      9
+    ],
+    "object_names_2": [
+      "coffee table",
+      "couch"
+    ],
+    "question_2": "The coffee table on the right is closest to what?",
+    "question_id_2": "train-scene0001-7",
+    "scene_id_2": "scene0001_00",
+    "new_question": "What type of table is located on the right side next to the brown couch?",
+    "new_answer": "wooden coffee table",
+    "new_answers": [
+      "wooden coffee table"
+    ],
+    "question_id": "scene0001_00_mv_8",
+    "n_views_can_solve": 2,
+    "best_view_overlap_mean": 0.6666666666666666,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0001_00",
+    "answers_1": [
+      "tables"
+    ],
+    "object_ids_1": [
+      5,
+      6,
+      7
+    ],
+    "object_names_1": [
+      "table",
+      "coffee table",
+      "coffee table"
+    ],
+    "question_1": "The couch is on the right of what?",
+    "question_id_1": "train-scene0001-14",
+    "scene_id_1": "scene0001_00",
+    "answers_2": [
+      "table"
+    ],
+    "object_ids_2": [
+      0,
+      5,
+      17
+    ],
+    "object_names_2": [
+      "couch",
+      "table",
+      "window"
+    ],
+    "question_2": "What is the couch nearest the window placed in front of?",
+    "question_id_2": "train-scene0001-23",
+    "scene_id_2": "scene0001_00",
+    "new_question": "What is in front of the couch that is located on the right of tables and nearest the window?",
+    "new_answer": "table",
+    "new_answers": [
+      "table"
+    ],
+    "question_id": "scene0001_00_mv_13",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.6,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0001_00",
+    "answers_1": [
+      "next to other coffee table surrounded by 2 couches and 2 armchairs"
+    ],
+    "object_ids_1": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      13
+    ],
+    "object_names_1": [
+      "coffee table",
+      "coffee table",
+      "couch",
+      "couch",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "Where does the coffee table sit in the sitting area?",
+    "question_id_1": "train-scene0001-6",
+    "scene_id_1": "scene0001_00",
+    "answers_2": [
+      "brown"
+    ],
+    "object_ids_2": [
+      0,
+      1,
+      8,
+      9
+    ],
+    "object_names_2": [
+      "couch",
+      "couch",
+      "couch",
+      "couch"
+    ],
+    "question_2": "What color leather sofa is in the room?",
+    "question_id_2": "train-scene0001-8",
+    "scene_id_2": "scene0001_00",
+    "new_question": "What color is the leather sofa in the sitting area with two coffee tables surrounded by 2 couches and 2 armchairs?",
+    "new_answer": "brown",
+    "new_answers": [
+      "brown"
+    ],
+    "question_id": "scene0001_00_mv_17",
+    "n_views_can_solve": 3,
+    "best_view_overlap_mean": 0.6733522252459523,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0001_00",
+    "answers_1": [
+      "tables"
+    ],
+    "object_ids_1": [
+      5,
+      6,
+      7
+    ],
+    "object_names_1": [
+      "table",
+      "coffee table",
+      "coffee table"
+    ],
+    "question_1": "The brown couch is right next to what?",
+    "question_id_1": "train-scene0001-13",
+    "scene_id_1": "scene0001_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      6,
+      7,
+      12
+    ],
+    "object_names_2": [
+      "coffee table",
+      "coffee table",
+      "armchair"
+    ],
+    "question_2": "How many tables is the brown armchair facing?",
+    "question_id_2": "train-scene0001-15",
+    "scene_id_2": "scene0001_00",
+    "new_question": "How many tables are next to the brown couch that the armchair is facing?",
+    "new_answer": "2 tables",
+    "new_answers": [
+      "2 tables"
+    ],
+    "question_id": "scene0001_00_mv_14",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.75,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0003_00",
+    "answers_1": [
+      "left of refrigerator",
+      "on wall left of refrigerator",
+      "above sink"
+    ],
+    "object_ids_1": [
+      10,
+      14
+    ],
+    "object_names_1": [
+      "refrigerator",
+      "soap dispenser"
+    ],
+    "question_1": "Where is the soap dispenser located?",
+    "question_id_1": "train-scene0003-7",
+    "scene_id_1": "scene0003_00",
+    "answers_2": [
+      "right of long kitchen cabinets",
+      "in corner on right"
+    ],
+    "object_ids_2": [
+      5,
+      10
+    ],
+    "object_names_2": [
+      "kitchen cabinets",
+      "refrigerator"
+    ],
+    "question_2": "Where is the black silver fridge located?",
+    "question_id_2": "train-scene0003-9",
+    "scene_id_2": "scene0003_00",
+    "new_question": "In which direction is the soap dispenser located relative to the black silver fridge that is right of the long kitchen cabinets?",
+    "new_answer": "left of refrigerator",
+    "new_answers": [
+      "left of refrigerator"
+    ],
+    "question_id": "scene0003_00_mv_0",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5740899386261676,
+    "best_view_overlap_min": 0.45155689519863995,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0003_00",
+    "answers_1": [
+      "refrigerator",
+      "water cooler"
+    ],
+    "object_ids_1": [
+      7,
+      10
+    ],
+    "object_names_1": [
+      "water cooler",
+      "refrigerator"
+    ],
+    "question_1": "What type of cooler is next to a cabinet?",
+    "question_id_1": "train-scene0003-21",
+    "scene_id_1": "scene0003_00",
+    "answers_2": [
+      "above refrigerator",
+      "above kitchen counter"
+    ],
+    "object_ids_2": [
+      4,
+      10
+    ],
+    "object_names_2": [
+      "cabinet",
+      "refrigerator"
+    ],
+    "question_2": "Where is the cabinet located?",
+    "question_id_2": "train-scene0003-71",
+    "scene_id_2": "scene0003_00",
+    "new_question": "What type of cooler is located next to the cabinet that is above the refrigerator?",
+    "new_answer": "water cooler",
+    "new_answers": [
+      "water cooler"
+    ],
+    "question_id": "scene0003_00_mv_4",
+    "n_views_can_solve": 2,
+    "best_view_overlap_mean": 0.3333333333333333,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0003_00",
+    "answers_1": [
+      "right of long kitchen cabinets",
+      "in corner on right"
+    ],
+    "object_ids_1": [
+      5,
+      10
+    ],
+    "object_names_1": [
+      "kitchen cabinets",
+      "refrigerator"
+    ],
+    "question_1": "Where is the black silver fridge located?",
+    "question_id_1": "train-scene0003-9",
+    "scene_id_1": "scene0003_00",
+    "answers_2": [
+      "above refrigerator",
+      "above kitchen counter"
+    ],
+    "object_ids_2": [
+      4,
+      10
+    ],
+    "object_names_2": [
+      "cabinet",
+      "refrigerator"
+    ],
+    "question_2": "Where is the cabinet located?",
+    "question_id_2": "train-scene0003-71",
+    "scene_id_2": "scene0003_00",
+    "new_question": "Where are the kitchen cabinets located in relation to the black silver fridge?",
+    "new_answer": "right of long kitchen cabinets or in corner on right, and above refrigerator or above kitchen counter",
+    "new_answers": [
+      "right of long kitchen cabinets",
+      "in corner on right, and above refrigerator",
+      "above kitchen counter"
+    ],
+    "question_id": "scene0003_00_mv_1",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.356576825177848,
+    "best_view_overlap_min": 0.07246984229390284,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0003_00",
+    "answers_1": [
+      "left of refrigerator",
+      "on wall left of refrigerator",
+      "above sink"
+    ],
+    "object_ids_1": [
+      10,
+      14
+    ],
+    "object_names_1": [
+      "refrigerator",
+      "soap dispenser"
+    ],
+    "question_1": "Where is the soap dispenser located?",
+    "question_id_1": "train-scene0003-7",
+    "scene_id_1": "scene0003_00",
+    "answers_2": [
+      "above refrigerator",
+      "above kitchen counter"
+    ],
+    "object_ids_2": [
+      4,
+      10
+    ],
+    "object_names_2": [
+      "cabinet",
+      "refrigerator"
+    ],
+    "question_2": "Where is the cabinet located?",
+    "question_id_2": "train-scene0003-71",
+    "scene_id_2": "scene0003_00",
+    "new_question": "What is located to the left of the refrigerator where the cabinet is also positioned?",
+    "new_answer": "soap dispenser",
+    "new_answers": [
+      "soap dispenser"
+    ],
+    "question_id": "scene0003_00_mv_3",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.587321006263316,
+    "best_view_overlap_min": 0.31068692005346477,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0004_00",
+    "answers_1": [
+      "against wall"
+    ],
+    "object_ids_1": [
+      5,
+      10,
+      11
+    ],
+    "object_names_1": [
+      "chair",
+      "chair",
+      "chair"
+    ],
+    "question_1": "How is the gray and blue leather chair placed?",
+    "question_id_1": "train-scene0004-4",
+    "scene_id_1": "scene0004_00",
+    "answers_2": [
+      "against wall",
+      "against wall"
+    ],
+    "object_ids_2": [
+      5,
+      9
+    ],
+    "object_names_2": [
+      "chair",
+      "chair"
+    ],
+    "question_2": "Where is the blue and grey chair placed?",
+    "question_id_2": "train-scene0004-45",
+    "scene_id_2": "scene0004_00",
+    "new_question": "What is the placement of the chair that is both gray and blue in color?",
+    "new_answer": "against wall",
+    "new_answers": [
+      "against wall"
+    ],
+    "question_id": "scene0004_00_mv_2",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9160857945041232,
+    "best_view_overlap_min": 0.7746320525720534,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0004_00",
+    "answers_1": [
+      "3"
+    ],
+    "object_ids_1": [
+      5,
+      10,
+      11
+    ],
+    "object_names_1": [
+      "chair",
+      "chair",
+      "chair"
+    ],
+    "question_1": "How many chairs are next to each other?",
+    "question_id_1": "train-scene0004-32",
+    "scene_id_1": "scene0004_00",
+    "answers_2": [
+      "against wall",
+      "against wall"
+    ],
+    "object_ids_2": [
+      5,
+      9
+    ],
+    "object_names_2": [
+      "chair",
+      "chair"
+    ],
+    "question_2": "Where is the blue and grey chair placed?",
+    "question_id_2": "train-scene0004-45",
+    "scene_id_2": "scene0004_00",
+    "new_question": "How many chairs are next to each other that are against the wall?",
+    "new_answer": "3 chairs",
+    "new_answers": [
+      "3 chairs"
+    ],
+    "question_id": "scene0004_00_mv_0",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9160857945041232,
+    "best_view_overlap_min": 0.7746320525720534,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0004_00",
+    "answers_1": [
+      "against wall"
+    ],
+    "object_ids_1": [
+      5,
+      10,
+      11
+    ],
+    "object_names_1": [
+      "chair",
+      "chair",
+      "chair"
+    ],
+    "question_1": "How is the gray and blue leather chair placed next to other identical chairs?",
+    "question_id_1": "train-scene0004-10",
+    "scene_id_1": "scene0004_00",
+    "answers_2": [
+      "against wall",
+      "against wall"
+    ],
+    "object_ids_2": [
+      5,
+      9
+    ],
+    "object_names_2": [
+      "chair",
+      "chair"
+    ],
+    "question_2": "Where is the blue and grey chair placed?",
+    "question_id_2": "train-scene0004-45",
+    "scene_id_2": "scene0004_00",
+    "new_question": "What is the placement of the gray and blue leather chair among the other identical chairs?",
+    "new_answer": "against wall",
+    "new_answers": [
+      "against wall"
+    ],
+    "question_id": "scene0004_00_mv_1",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9160857945041232,
+    "best_view_overlap_min": 0.7746320525720534,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0005_00",
+    "answers_1": [
+      "at table",
+      "at table",
+      "at table",
+      "at table",
+      "pushed under desk",
+      "under table"
+    ],
+    "object_ids_1": [
+      9,
+      10,
+      16
+    ],
+    "object_names_1": [
+      "table",
+      "table",
+      "chair"
+    ],
+    "question_1": "Where is the green chair located?",
+    "question_id_1": "train-scene0005-9",
+    "scene_id_1": "scene0005_00",
+    "answers_2": [
+      "green",
+      "green plastic armchair",
+      "green desk",
+      "green desk"
+    ],
+    "object_ids_2": [
+      5,
+      16
+    ],
+    "object_names_2": [
+      "chair",
+      "chair"
+    ],
+    "question_2": "What type of chair is facing a table?",
+    "question_id_2": "train-scene0005-14",
+    "scene_id_2": "scene0005_00",
+    "new_question": "What color is the chair that is located at a table and facing another table?",
+    "new_answer": "green",
+    "new_answers": [
+      "green"
+    ],
+    "question_id": "scene0005_00_mv_0",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9871599745074193,
+    "best_view_overlap_min": 0.9618586258539926,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0005_00",
+    "answers_1": [
+      "at table",
+      "at table",
+      "at table",
+      "at table",
+      "pushed under desk",
+      "under table"
+    ],
+    "object_ids_1": [
+      9,
+      10,
+      16
+    ],
+    "object_names_1": [
+      "table",
+      "table",
+      "chair"
+    ],
+    "question_1": "Where is the green chair located?",
+    "question_id_1": "train-scene0005-9",
+    "scene_id_1": "scene0005_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      5,
+      16
+    ],
+    "object_names_2": [
+      "chair",
+      "chair"
+    ],
+    "question_2": "How many green chairs does the brown table face?",
+    "question_id_2": "train-scene0005-36",
+    "scene_id_2": "scene0005_00",
+    "new_question": "How many green chairs are located at the table?",
+    "new_answer": "2 green chairs",
+    "new_answers": [
+      "2 green chairs"
+    ],
+    "question_id": "scene0005_00_mv_1",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9871599745074193,
+    "best_view_overlap_min": 0.9618586258539926,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0006_00",
+    "answers_1": [
+      "2"
+    ],
+    "object_ids_1": [
+      1,
+      2
+    ],
+    "object_names_1": [
+      "bed",
+      "bed"
+    ],
+    "question_1": "How many beds is the round nightstand in between?",
+    "question_id_1": "train-scene0006-40",
+    "scene_id_1": "scene0006_00",
+    "answers_2": [
+      "on windows",
+      "in middle",
+      "right of bed",
+      "right of bed",
+      "in front of window",
+      "in left corner of room"
+    ],
+    "object_ids_2": [
+      1,
+      3,
+      31
+    ],
+    "object_names_2": [
+      "bed",
+      "curtain",
+      "curtain"
+    ],
+    "question_2": "Where is the curtain located?",
+    "question_id_2": "train-scene0006-121",
+    "scene_id_2": "scene0006_00",
+    "new_question": "In which location relative to the beds is the curtain positioned when the round nightstand is between 2 beds?",
+    "new_answer": "in middle or right of bed or right of bed or in front of window or in left corner of room",
+    "new_answers": [
+      "in middle",
+      "right of bed",
+      "right of bed",
+      "in front of window",
+      "in left corner of room"
+    ],
+    "question_id": "scene0006_00_mv_7",
+    "n_views_can_solve": 2,
+    "best_view_overlap_mean": 0.5650224737811127,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0006_00",
+    "answers_1": [
+      "on windows",
+      "in middle",
+      "right of bed",
+      "right of bed",
+      "in front of window",
+      "in left corner of room"
+    ],
+    "object_ids_1": [
+      1,
+      3,
+      31
+    ],
+    "object_names_1": [
+      "bed",
+      "curtain",
+      "curtain"
+    ],
+    "question_1": "Where is the curtain located?",
+    "question_id_1": "train-scene0006-121",
+    "scene_id_1": "scene0006_00",
+    "answers_2": [
+      "between 2 beds"
+    ],
+    "object_ids_2": [
+      1,
+      2
+    ],
+    "object_names_2": [
+      "bed",
+      "bed"
+    ],
+    "question_2": "Where is the nightstand located?",
+    "question_id_2": "train-scene0006-168",
+    "scene_id_2": "scene0006_00",
+    "new_question": "Is the curtain located in the same area as the nightstand situated between two beds?",
+    "new_answer": "no, the curtain and the nightstand between the beds are in different locations",
+    "new_answers": [
+      "no, the curtain and the nightstand between the beds are in different locations"
+    ],
+    "question_id": "scene0006_00_mv_8",
+    "n_views_can_solve": 2,
+    "best_view_overlap_mean": 0.5650224737811127,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0006_00",
+    "answers_1": [
+      "white",
+      "white"
+    ],
+    "object_ids_1": [
+      12,
+      17
+    ],
+    "object_names_1": [
+      "pillow",
+      "pillow"
+    ],
+    "question_1": "What color is the pillow on the bed?",
+    "question_id_1": "train-scene0006-61",
+    "scene_id_1": "scene0006_00",
+    "answers_2": [
+      "pillows"
+    ],
+    "object_ids_2": [
+      17,
+      18
+    ],
+    "object_names_2": [
+      "pillow",
+      "pillow"
+    ],
+    "question_2": "What is on the bed on the left side?",
+    "question_id_2": "train-scene0006-80",
+    "scene_id_2": "scene0006_00",
+    "new_question": "What color are the pillows located on the left side of the bed?",
+    "new_answer": "white",
+    "new_answers": [
+      "white"
+    ],
+    "question_id": "scene0006_00_mv_3",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.7851736531759711,
+    "best_view_overlap_min": 0.35552095952791346,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0006_00",
+    "answers_1": [
+      "2",
+      "2"
+    ],
+    "object_ids_1": [
+      1,
+      2
+    ],
+    "object_names_1": [
+      "bed",
+      "bed"
+    ],
+    "question_1": "How many beds are on either side of the nightstand?",
+    "question_id_1": "train-scene0006-97",
+    "scene_id_1": "scene0006_00",
+    "answers_2": [
+      "on windows",
+      "in middle",
+      "right of bed",
+      "right of bed",
+      "in front of window",
+      "in left corner of room"
+    ],
+    "object_ids_2": [
+      1,
+      3,
+      31
+    ],
+    "object_names_2": [
+      "bed",
+      "curtain",
+      "curtain"
+    ],
+    "question_2": "Where is the curtain located?",
+    "question_id_2": "train-scene0006-121",
+    "scene_id_2": "scene0006_00",
+    "new_question": "How many beds are near the curtain located near the bed?",
+    "new_answer": "2 beds",
+    "new_answers": [
+      "2 beds"
+    ],
+    "question_id": "scene0006_00_mv_2",
+    "n_views_can_solve": 2,
+    "best_view_overlap_mean": 0.5650224737811127,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0006_00",
+    "answers_1": [
+      "8"
+    ],
+    "object_ids_1": [
+      10,
+      11,
+      17,
+      18
+    ],
+    "object_names_1": [
+      "pillow",
+      "pillow",
+      "pillow",
+      "pillow"
+    ],
+    "question_1": "How many white pillows are there?",
+    "question_id_1": "train-scene0006-1",
+    "scene_id_1": "scene0006_00",
+    "answers_2": [
+      "white",
+      "white"
+    ],
+    "object_ids_2": [
+      12,
+      17
+    ],
+    "object_names_2": [
+      "pillow",
+      "pillow"
+    ],
+    "question_2": "What color is the pillow on the bed?",
+    "question_id_2": "train-scene0006-61",
+    "scene_id_2": "scene0006_00",
+    "new_question": "How many white pillows are on the bed?",
+    "new_answer": "8 white pillows are on the bed",
+    "new_answers": [
+      "8 white pillows are on the bed"
+    ],
+    "question_id": "scene0006_00_mv_6",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.6533839649025269,
+    "best_view_overlap_min": 0.14689568331609434,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "2"
+    ],
+    "object_ids_1": [
+      0,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "How many chairs are on the right?",
+    "question_id_1": "train-scene0013-9",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      0,
+      3
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "How many brown woods are above the table?",
+    "question_id_2": "train-scene0013-33",
+    "scene_id_2": "scene0013_00",
+    "new_question": "How many brown chairs are on the right side of the table?",
+    "new_answer": "2 brown chairs",
+    "new_answers": [
+      "2 brown chairs"
+    ],
+    "question_id": "scene0013_00_mv_5",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.633611862604706,
+    "best_view_overlap_min": 0.010183755091558482,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "whole"
+    ],
+    "object_ids_1": [
+      0,
+      1,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "What part of the chair is brown?",
+    "question_id_1": "train-scene0013-22",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      0,
+      3
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "How many brown woods are above the table?",
+    "question_id_2": "train-scene0013-33",
+    "scene_id_2": "scene0013_00",
+    "new_question": "How many brown chairs are located above the table?",
+    "new_answer": "2 brown chairs",
+    "new_answers": [
+      "2 brown chairs"
+    ],
+    "question_id": "scene0013_00_mv_4",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5299120276153392,
+    "best_view_overlap_min": 0.010183755091558482,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "2"
+    ],
+    "object_ids_1": [
+      0,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "How many chairs are on the right?",
+    "question_id_1": "train-scene0013-9",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2 armchairs"
+    ],
+    "object_ids_2": [
+      1,
+      2
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "What is the coffee table in front of?",
+    "question_id_2": "train-scene0013-19",
+    "scene_id_2": "scene0013_00",
+    "new_question": "How many chairs are on the right side that are in front of the coffee table?",
+    "new_answer": "2 armchairs",
+    "new_answers": [
+      "2 armchairs"
+    ],
+    "question_id": "scene0013_00_mv_3",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.4842536782283597,
+    "best_view_overlap_min": 0.018874758481744355,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "3"
+    ],
+    "object_ids_1": [
+      0,
+      1,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "How many chairs are around the coffee table?",
+    "question_id_1": "train-scene0013-15",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      0,
+      3
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "How many brown woods are above the table?",
+    "question_id_2": "train-scene0013-33",
+    "scene_id_2": "scene0013_00",
+    "new_question": "How many chairs are around the coffee table that have brown wood above them?",
+    "new_answer": "2 chairs",
+    "new_answers": [
+      "2 chairs"
+    ],
+    "question_id": "scene0013_00_mv_2",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5299120276153392,
+    "best_view_overlap_min": 0.010183755091558482,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "brown"
+    ],
+    "object_ids_1": [
+      0,
+      1,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "What color is the chair?",
+    "question_id_1": "train-scene0013-21",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      0,
+      3
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "How many brown woods are above the table?",
+    "question_id_2": "train-scene0013-33",
+    "scene_id_2": "scene0013_00",
+    "new_question": "How many brown chairs are above the table?",
+    "new_answer": "2 brown chairs",
+    "new_answers": [
+      "2 brown chairs"
+    ],
+    "question_id": "scene0013_00_mv_1",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5299120276153392,
+    "best_view_overlap_min": 0.010183755091558482,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0013_00",
+    "answers_1": [
+      "beige"
+    ],
+    "object_ids_1": [
+      0,
+      1,
+      2
+    ],
+    "object_names_1": [
+      "armchair",
+      "armchair",
+      "armchair"
+    ],
+    "question_1": "What color is the cotton armchair?",
+    "question_id_1": "train-scene0013-12",
+    "scene_id_1": "scene0013_00",
+    "answers_2": [
+      "2"
+    ],
+    "object_ids_2": [
+      0,
+      3
+    ],
+    "object_names_2": [
+      "armchair",
+      "armchair"
+    ],
+    "question_2": "How many brown woods are above the table?",
+    "question_id_2": "train-scene0013-33",
+    "scene_id_2": "scene0013_00",
+    "new_question": "What color is the cotton armchair located near the 2 brown woods above the table?",
+    "new_answer": "beige",
+    "new_answers": [
+      "beige"
+    ],
+    "question_id": "scene0013_00_mv_0",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5299120276153392,
+    "best_view_overlap_min": 0.010183755091558482,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "beige"
+    ],
+    "object_ids_1": [
+      16,
+      19
+    ],
+    "object_names_1": [
+      "towel",
+      "towel"
+    ],
+    "question_1": "What color are the other two towels on top of each other?",
+    "question_id_1": "train-scene0029-16",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "towels are hanging"
+    ],
+    "object_ids_2": [
+      8,
+      15,
+      19
+    ],
+    "object_names_2": [
+      "toilet",
+      "towel",
+      "towel"
+    ],
+    "question_2": "What is on the wall next to the toilet bowl?",
+    "question_id_2": "train-scene0029-24",
+    "scene_id_2": "scene0029_00",
+    "new_question": "What color are the towels hanging on the wall next to the toilet bowl that are stacked on top of each other?",
+    "new_answer": "beige",
+    "new_answers": [
+      "beige"
+    ],
+    "question_id": "scene0029_00_mv_70",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.6926551840000136,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000004
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "metallic trash can"
+    ],
+    "object_ids_1": [
+      1,
+      6,
+      8
+    ],
+    "object_names_1": [
+      "shower curtain",
+      "trash can",
+      "toilet"
+    ],
+    "question_1": "What is in between a toilet and shower curtain?",
+    "question_id_1": "train-scene0029-2",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "to right of bathtub",
+      "in front of bath tub"
+    ],
+    "object_ids_2": [
+      0,
+      1
+    ],
+    "object_names_2": [
+      "bathtub",
+      "shower curtain"
+    ],
+    "question_2": "Where is the shower curtain located?",
+    "question_id_2": "train-scene0029-59",
+    "scene_id_2": "scene0029_00",
+    "new_question": "What type of object is located between the toilet and the shower curtain that is to the right of the bathtub?",
+    "new_answer": "metallic trash can",
+    "new_answers": [
+      "metallic trash can"
+    ],
+    "question_id": "scene0029_00_mv_9",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.9694080912226566,
+    "best_view_overlap_min": 0.8776323648906262,
+    "best_view_overlap_max": 1.0000000000000002
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "toilet bowl"
+    ],
+    "object_ids_1": [
+      8,
+      10
+    ],
+    "object_names_1": [
+      "toilet",
+      "toilet paper"
+    ],
+    "question_1": "The toilet paper is far away from what part of the toilet?",
+    "question_id_1": "train-scene0029-41",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "above toilet"
+    ],
+    "object_ids_2": [
+      8,
+      15,
+      19
+    ],
+    "object_names_2": [
+      "toilet",
+      "towel",
+      "towel"
+    ],
+    "question_2": "Where are the washcloths located?",
+    "question_id_2": "train-scene0029-67",
+    "scene_id_2": "scene0029_00",
+    "new_question": "Where are the washcloths located relative to the toilet paper and the toilet bowl?",
+    "new_answer": "above toilet",
+    "new_answers": [
+      "above toilet"
+    ],
+    "question_id": "scene0029_00_mv_20",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5098973801907605,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000004
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "to right of bathtub",
+      "in front of bath tub"
+    ],
+    "object_ids_1": [
+      0,
+      1
+    ],
+    "object_names_1": [
+      "bathtub",
+      "shower curtain"
+    ],
+    "question_1": "Where is the shower curtain located?",
+    "question_id_1": "train-scene0029-59",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "towel"
+    ],
+    "object_ids_2": [
+      0,
+      5
+    ],
+    "object_names_2": [
+      "bathtub",
+      "towel"
+    ],
+    "question_2": "What is on the floor in front of the bathtub?",
+    "question_id_2": "train-scene0029-76",
+    "scene_id_2": "scene0029_00",
+    "new_question": "What item is on the floor in front of the bathtub, next to the shower curtain?",
+    "new_answer": "towel",
+    "new_answers": [
+      "towel"
+    ],
+    "question_id": "scene0029_00_mv_51",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.7934211952965909,
+    "best_view_overlap_min": 0.6394019420706336,
+    "best_view_overlap_max": 1.0
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "toilet"
+    ],
+    "object_ids_1": [
+      6,
+      8
+    ],
+    "object_names_1": [
+      "trash can",
+      "toilet"
+    ],
+    "question_1": "What is next to the wall and trashcan in the bathroom?",
+    "question_id_1": "train-scene0029-39",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "above toilet"
+    ],
+    "object_ids_2": [
+      8,
+      15,
+      19
+    ],
+    "object_names_2": [
+      "toilet",
+      "towel",
+      "towel"
+    ],
+    "question_2": "Where are the washcloths located?",
+    "question_id_2": "train-scene0029-67",
+    "scene_id_2": "scene0029_00",
+    "new_question": "What is located above the toilet that is next to the wall and trashcan in the bathroom?",
+    "new_answer": "washcloths",
+    "new_answers": [
+      "washcloths"
+    ],
+    "question_id": "scene0029_00_mv_3",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.5098973801907605,
+    "best_view_overlap_min": 0.1752042274666097,
+    "best_view_overlap_max": 1.0000000000000004
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "3"
+    ],
+    "object_ids_1": [
+      8,
+      16,
+      18
+    ],
+    "object_names_1": [
+      "toilet",
+      "towel",
+      "towel"
+    ],
+    "question_1": "How many towels are on the shelf above the toilet?",
+    "question_id_1": "train-scene0029-13",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "towels are hanging"
+    ],
+    "object_ids_2": [
+      8,
+      15,
+      19
+    ],
+    "object_names_2": [
+      "toilet",
+      "towel",
+      "towel"
+    ],
+    "question_2": "What is on the wall next to the toilet bowl?",
+    "question_id_2": "train-scene0029-24",
+    "scene_id_2": "scene0029_00",
+    "new_question": "How many towels are hanging on the wall next to the toilet bowl that are above the toilet?",
+    "new_answer": "3 towels",
+    "new_answers": [
+      "3 towels"
+    ],
+    "question_id": "scene0029_00_mv_4",
+    "n_views_can_solve": 1,
+    "best_view_overlap_mean": 0.7541241472000109,
+    "best_view_overlap_min": 0.0,
+    "best_view_overlap_max": 1.0000000000000004
+  },
+  {
+    "scene_id": "scene0029_00",
+    "answers_1": [
+      "shower curtain hangs from curtain rod above bath tub"
+    ],
+    "object_ids_1": [
+      0,
+      1
+    ],
+    "object_names_1": [
+      "bathtub",
+      "shower curtain"
+    ],
+    "question_1": "Where does the tan shower curtain hang?",
+    "question_id_1": "train-scene0029-28",
+    "scene_id_1": "scene0029_00",
+    "answers_2": [
+      "towel"
+    ],
+    "object_ids_2": [
+      0,
+      5
+    ],
+    "object_names_2": [
+      "bathtub",
+      "towel"
+    ],
+    "question_2": "What is on the floor in front of the bathtub?",
+    "question_id_2": "train-scene0029-76",
+    "scene_id_2": "scene0029_00",
+    "new_question": "What color is the shower curtain hanging above the bathtub that has a towel on the floor in front of it?",
+    "new_answer": "tan",
+    "new_answers": [
+      "tan"
+    ],
+    "question_id": "scene0029_00_mv_12",
+    "n_views_can_solve": 0,
+    "best_view_overlap_mean": 0.7934211952965909,
+    "best_view_overlap_min": 0.6394019420706336,
+    "best_view_overlap_max": 1.0
+  }
+]
