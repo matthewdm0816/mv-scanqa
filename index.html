@@ -278,11 +278,90 @@
       </div>
       <div class="column is-3">
         <div class="box has-text-centered">
-          <p class="title is-5 has-text-success">706</p>
-          <p class="subtitle is-6">3D Scenes</p>
+          <p class="title is-5 has-text-success">2.3</p>
+          <p class="subtitle is-6">Average Views Required</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MV-ScanQA Dataset Statistics -->
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">MV-ScanQA Dataset Analysis</h2>
+        <div class="content has-text-justified">
+          <p>
+            MV-ScanQA introduces multi-view reasoning challenges by composing questions that require information integration 
+            across different viewpoints. Below we present key statistics about the dataset composition and characteristics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Row: Two Figures -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <!-- Views Distribution -->
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="subtitle is-5 has-text-centered">
+            <span class="icon has-text-info"><i class="fas fa-eye"></i></span>
+            <span>Number of Views Required Distribution</span>
+          </h4>
+          <figure class="image">
+            <img src="static/images/n_views_distribution_bar.png" 
+                 alt="Distribution of number of views required to solve questions" 
+                 style="max-width: 100%; height: auto;">
+          </figure>
+          <p class="has-text-centered has-text-grey is-size-7" style="margin-top: 0.5rem;">
+            <em>Distribution showing how many views are needed to answer each question. 
+            Higher values indicate more complex multi-view reasoning requirements.</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Question Type Distribution -->
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="subtitle is-5 has-text-centered">
+            <span class="icon has-text-success"><i class="fas fa-chart-pie"></i></span>
+            <span>Question Type Distribution</span>
+          </h4>
+          <figure class="image">
+            <img src="static/images/question_types_sorted.png" 
+                 alt="Distribution of question types in MV-ScanQA" 
+                 style="max-width: 100%; height: auto;">
+          </figure>
+          <p class="has-text-centered has-text-grey is-size-7" style="margin-top: 0.5rem;">
+            <em>Breakdown of question types showing the diversity of reasoning tasks, 
+            including counting, spatial relations, and attribute queries.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: Word Cloud -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <div class="box">
+          <h4 class="subtitle is-5 has-text-centered">
+            <span class="icon has-text-primary"><i class="fas fa-cloud"></i></span>
+            <span>Question Word Cloud</span>
+          </h4>
+          <figure class="image">
+            <img src="static/images/scanqa_wordcloud.png" 
+                 alt="Word cloud of questions in MV-ScanQA dataset" 
+                 style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+          </figure>
+          <p class="has-text-centered has-text-grey is-size-7" style="margin-top: 0.5rem;">
+            <em>Word cloud visualization of the most frequent terms in MV-ScanQA questions. </em>
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
