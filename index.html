@@ -821,7 +821,7 @@
                 <span class="tag is-primary">Spatial Relations</span>
                 <span class="tag is-info">Object Properties</span>
                 <span class="tag is-success">Contextual Understanding</span>
-                <span class="tag is-warning">Multi-Object Alignment</span>
+                <span class="tag is-danger">Multi-Object Alignment</span>
               </div>
             </div>
           </div>
@@ -924,7 +924,7 @@
   // 添加加载JSON数据的函数
   async function loadTripAlignAnnotations() {
     try {
-      const response = await fetch('static/tripalign/sampled_annotations.json');
+      const response = await fetch('static/tripalign/annotated_tripalign.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -962,7 +962,7 @@
         tripAlignData[sceneId][tripletId] = {
           "2d_image": `static/tripalign/images/${sceneId}/color/${frameNumber}.jpg`,
           "3d_model": `${HF_REPO}/${sceneId}_vh_clean.ply`,
-          "text": item.description,
+          "text": item.annotated_description || item.description || "No description available",
           "camera_info": `Frame: ${item.frame_id}, ITM Score: ${item.itm_score}`,
           "objects": "Objects detected in scene" // 可以后续从描述中提取
         };
@@ -1707,7 +1707,9 @@
     };
     
     // Update text description
-    document.getElementById('tripAlignText').textContent = data.text;
+    // document.getElementById('tripAlignText').textContent = data.text;
+    document.getElementById('tripAlignText').innerHTML = data.text;
+
     
     // Update info
     document.getElementById('cameraInfo').textContent = data.camera_info;

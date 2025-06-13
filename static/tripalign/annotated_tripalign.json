@@ -1,0 +1,242 @@
+[
+  {
+    "frame_id": "5220.jpg",
+    "description": "The image shows a cozy living space with a wooden bar counter and four matching bar stools. Adjacent to the bar is a comfortable blue couch, and behind it, a built-in wooden entertainment center with shelves filled with books and a TV. A coffee maker sits on the counter, adding a homey touch to the scene.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">cozy</span> <span style=\"color: #48c774;\">living space</span> with a <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">bar counter</span> and <span style=\"color: #f14668;\">four matching bar stools</span>. <span style=\"color: #00d1b2;\">Adjacent to</span> the bar is a <span style=\"color: #3298dc;\">comfortable</span> <span style=\"color: #3298dc;\">blue</span> <span style=\"color: #f14668;\">couch</span>, and <span style=\"color: #00d1b2;\">behind</span> it, a built-in <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">entertainment center</span> with <span style=\"color: #f14668;\">shelves</span> <span style=\"color: #3298dc;\">filled</span> with <span style=\"color: #f14668;\">books</span> and a <span style=\"color: #f14668;\">TV</span>. A <span style=\"color: #f14668;\">coffee maker</span> <span style=\"color: #00d1b2;\">sits</span> on the <span style=\"color: #f14668;\">counter</span>, adding a <span style=\"color: #48c774;\">homey</span> touch to the <span style=\"color: #48c774;\">scene</span>.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 6,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "3640.jpg",
+    "description": "The image shows a cozy corner of a home with a wooden cabinet on the left and a bathroom in the background. A guitar rests against a white wall, which is adorned with a framed artwork. The bathroom features a pedestal sink, a mirror, and a light fixture. The floor is tiled, adding to the warm ambiance.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">cozy</span> <span style=\"color: #00d1b2;\">corner</span> of a home with a <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">cabinet</span> <span style=\"color: #00d1b2;\">on the left</span> and a <span style=\"color: #48c774;\">bathroom</span> <span style=\"color: #00d1b2;\">in the background</span>. A <span style=\"color: #f14668;\">guitar</span> <span style=\"color: #00d1b2;\">rests</span> <span style=\"color: #00d1b2;\">against</span> a <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">wall</span>, which is adorned with a <span style=\"color: #f14668;\">framed artwork</span>. The <span style=\"color: #48c774;\">bathroom</span> features a <span style=\"color: #f14668;\">pedestal sink</span>, a <span style=\"color: #f14668;\">mirror</span>, and a <span style=\"color: #f14668;\">light</span> <span style=\"color: #f14668;\">fixture</span>. The <span style=\"color: #f14668;\">floor</span> is <span style=\"color: #3298dc;\">tiled</span>, adding to the <span style=\"color: #3298dc;\">warm</span> <span style=\"color: #48c774;\">ambiance</span>.",
+    "annotation_stats": {
+      "spatial_relations": 5,
+      "object_properties": 5,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "3740.jpg",
+    "description": "The image shows a small, clean bathroom with light blue walls and a tiled floor. It features a white toilet and a pedestal sink with a green hand towel hanging nearby. The bathroom is viewed through an open wooden door, and a dark blue bath mat is partially visible on the floor.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">small</span>, <span style=\"color: #3298dc;\">clean</span> <span style=\"color: #48c774;\">bathroom</span> with <span style=\"color: #3298dc;\">light blue</span> <span style=\"color: #f14668;\">walls</span> and a <span style=\"color: #3298dc;\">tiled</span> <span style=\"color: #f14668;\">floor</span>. It features a <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">toilet</span> and a <span style=\"color: #f14668;\">pedestal sink</span> with a <span style=\"color: #3298dc;\">green</span> <span style=\"color: #f14668;\">hand towel</span> <span style=\"color: #00d1b2;\">hanging</span> nearby. The <span style=\"color: #48c774;\">bathroom</span> is viewed <span style=\"color: #00d1b2;\">through</span> an <span style=\"color: #3298dc;\">open</span> <span style=\"color: #f14668;\">wooden door</span>, and a <span style=\"color: #3298dc;\">dark blue</span> <span style=\"color: #f14668;\">bath mat</span> is <span style=\"color: #3298dc;\">partially visible</span> on the <span style=\"color: #f14668;\">floor</span>.",
+    "annotation_stats": {
+      "spatial_relations": 2,
+      "object_properties": 9,
+      "contextual_understanding": 2,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "3260.jpg",
+    "description": "The image shows a tiled floor with a dark-colored sofa on the left side. A backpack is placed on the floor near the sofa. In the background, a bicycle wheel is partially visible on the right. The room appears to be a casual living space with some scattered items, including a few books and shoes.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">tiled</span> <span style=\"color: #f14668;\">floor</span> with a <span style=\"color: #3298dc;\">dark-colored</span> <span style=\"color: #f14668;\">sofa</span> <span style=\"color: #00d1b2;\">on the left</span> side. A <span style=\"color: #f14668;\">backpack</span> is <span style=\"color: #00d1b2;\">placed</span> on the <span style=\"color: #f14668;\">floor</span> <span style=\"color: #00d1b2;\">near</span> the <span style=\"color: #f14668;\">sofa</span>. <span style=\"color: #00d1b2;\">In the background</span>, a <span style=\"color: #f14668;\">bicycle</span> <span style=\"color: #f14668;\">wheel</span> is <span style=\"color: #3298dc;\">partially visible</span> <span style=\"color: #00d1b2;\">on the right</span>. The <span style=\"color: #48c774;\">room</span> appears to be a <span style=\"color: #48c774;\">casual</span> <span style=\"color: #48c774;\">living space</span> with some <span style=\"color: #3298dc;\">scattered</span> items, including a few <span style=\"color: #f14668;\">books</span> and <span style=\"color: #f14668;\">shoes</span>.",
+    "annotation_stats": {
+      "spatial_relations": 5,
+      "object_properties": 4,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "2500.jpg",
+    "description": "The image shows a room with a bicycle leaning against a curtain. The bike is gray with a black seat and handlebars. Next to it is a tall floor lamp with multiple lights. In the background, there is a wooden entertainment unit with a flat-screen TV. The floor is tiled with light-colored tiles.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image shows a <span style=\"color: #48c774;\">room</span> with a <span style=\"color: #f14668;\">bicycle</span> <span style=\"color: #00d1b2;\">leaning against</span> a <span style=\"color: #f14668;\">curtain</span>. The <span style=\"color: #f14668;\">bike</span> is <span style=\"color: #3298dc;\">gray</span> with a <span style=\"color: #3298dc;\">black</span> <span style=\"color: #f14668;\">seat</span> and <span style=\"color: #f14668;\">handlebars</span>. <span style=\"color: #00d1b2;\">Next to</span> it is a <span style=\"color: #3298dc;\">tall</span> <span style=\"color: #f14668;\">floor lamp</span> with <span style=\"color: #f14668;\">multiple lights</span>. <span style=\"color: #00d1b2;\">In the background</span>, there is a <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">entertainment unit</span> with a <span style=\"color: #f14668;\">flat-screen TV</span>. The <span style=\"color: #f14668;\">floor</span> is <span style=\"color: #3298dc;\">tiled</span> with <span style=\"color: #3298dc;\">light-colored</span> <span style=\"color: #f14668;\">tiles</span>.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 6,
+      "contextual_understanding": 1,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "2320.jpg",
+    "description": "The image depicts a small, organized room corner. A black office chair is positioned on the left, adjacent to a light-colored curtain. A wooden table holds various items, including books, papers, and a phone. Beneath the table, additional books and a pair of shoes are visible. The floor is tiled with a light pattern, enhancing the room's neat appearance.",
+    "scene_id": "scene0000_00",
+    "annotated_description": "The image depicts a <span style=\"color: #3298dc;\">small</span>, <span style=\"color: #3298dc;\">organized</span> <span style=\"color: #48c774;\">room corner</span>. A <span style=\"color: #3298dc;\">black</span> <span style=\"color: #f14668;\">office chair</span> is <span style=\"color: #00d1b2;\">positioned</span> <span style=\"color: #00d1b2;\">on the left</span>, <span style=\"color: #00d1b2;\">adjacent to</span> a <span style=\"color: #3298dc;\">light-colored</span> <span style=\"color: #f14668;\">curtain</span>. A <span style=\"color: #f14668;\">wooden table</span> holds various items, including <span style=\"color: #f14668;\">books</span>, <span style=\"color: #f14668;\">papers</span>, and a <span style=\"color: #f14668;\">phone</span>. <span style=\"color: #00d1b2;\">Beneath</span> the <span style=\"color: #f14668;\">table</span>, additional <span style=\"color: #f14668;\">books</span> and a pair of <span style=\"color: #f14668;\">shoes</span> are <span style=\"color: #3298dc;\">visible</span>. The <span style=\"color: #f14668;\">floor</span> is <span style=\"color: #3298dc;\">tiled</span> with a <span style=\"color: #f14668;\">light</span> pattern, enhancing the <span style=\"color: #48c774;\">room</span>'s <span style=\"color: #3298dc;\">neat</span> <span style=\"color: #48c774;\">appearance</span>.",
+    "annotation_stats": {
+      "spatial_relations": 4,
+      "object_properties": 7,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "340.jpg",
+    "description": "The image shows a wooden table with a natural, irregular shape and a polished surface. On the table, there is a small rectangular object, possibly a piece of paper or a card with some writing on it. Surrounding the table are two upholstered armchairs, suggesting a cozy seating area, likely in a living room or lounge.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image shows a <span style=\"color: #f14668;\">wooden table</span> with a <span style=\"color: #3298dc;\">natural</span>, <span style=\"color: #3298dc;\">irregular</span> shape and a <span style=\"color: #3298dc;\">polished</span> surface. On the <span style=\"color: #f14668;\">table</span>, there is a <span style=\"color: #3298dc;\">small</span> <span style=\"color: #3298dc;\">rectangular</span> object, possibly a piece of <span style=\"color: #f14668;\">paper</span> or a <span style=\"color: #f14668;\">card</span> with some writing on it. <span style=\"color: #00d1b2;\">Surrounding</span> the <span style=\"color: #f14668;\">table</span> are <span style=\"color: #f14668;\">two upholstered armchairs</span>, suggesting a <span style=\"color: #3298dc;\">cozy</span> <span style=\"color: #48c774;\">seating area</span>, likely in a <span style=\"color: #48c774;\">living room</span> or <span style=\"color: #48c774;\">lounge</span>.",
+    "annotation_stats": {
+      "spatial_relations": 1,
+      "object_properties": 6,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "480.jpg",
+    "description": "The image shows two beige upholstered armchairs positioned on a dark carpeted floor. Between them is a small, irregularly shaped wooden table with a polished surface. The setting appears to be a cozy, dimly lit lounge or waiting area, suggesting a comfortable space for relaxation or conversation. The overall ambiance is warm and inviting.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image shows two <span style=\"color: #3298dc;\">beige</span> upholstered <span style=\"color: #f14668;\">armchairs</span> <span style=\"color: #00d1b2;\">positioned</span> on a dark carpeted <span style=\"color: #f14668;\">floor</span>. <span style=\"color: #00d1b2;\">Between</span> them is a <span style=\"color: #3298dc;\">small</span>, irregularly shaped <span style=\"color: #f14668;\">wooden table</span> with a <span style=\"color: #3298dc;\">polished</span> surface. The <span style=\"color: #48c774;\">setting</span> appears to be a <span style=\"color: #3298dc;\">cozy</span>, dimly lit <span style=\"color: #48c774;\">lounge</span> or <span style=\"color: #48c774;\">waiting area</span>, suggesting a <span style=\"color: #3298dc;\">comfortable</span> <span style=\"color: #48c774;\">space</span> <span style=\"color: #48c774;\">for relaxation</span> or conversation. The overall <span style=\"color: #48c774;\">ambiance</span> is <span style=\"color: #3298dc;\">warm</span> and <span style=\"color: #48c774;\">inviting</span>.",
+    "annotation_stats": {
+      "spatial_relations": 2,
+      "object_properties": 6,
+      "contextual_understanding": 7,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "400.jpg",
+    "description": "The image shows a cozy, beige armchair positioned on a dark carpeted floor. To the left of the armchair, part of a matching sofa is visible. In the foreground, there is a wooden coffee table with a polished surface. The setting appears to be a comfortable living room or lounge area, with dim lighting creating a warm ambiance.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">cozy</span>, <span style=\"color: #3298dc;\">beige</span> <span style=\"color: #f14668;\">armchair</span> <span style=\"color: #00d1b2;\">positioned</span> on a dark carpeted <span style=\"color: #f14668;\">floor</span>. To the <span style=\"color: #00d1b2;\">left</span> of the <span style=\"color: #f14668;\">armchair</span>, part of a matching <span style=\"color: #f14668;\">sofa</span> is <span style=\"color: #3298dc;\">visible</span>. <span style=\"color: #00d1b2;\">In the foreground</span>, there is a <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">coffee table</span> with a <span style=\"color: #3298dc;\">polished</span> surface. The <span style=\"color: #48c774;\">setting</span> appears to be a <span style=\"color: #3298dc;\">comfortable</span> <span style=\"color: #48c774;\">living room</span> or <span style=\"color: #48c774;\">lounge</span> <span style=\"color: #48c774;\">area</span>, with dim lighting creating a <span style=\"color: #3298dc;\">warm</span> <span style=\"color: #48c774;\">ambiance</span>.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 7,
+      "contextual_understanding": 5,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "680.jpg",
+    "description": "The image depicts a wooden coffee table with a natural, irregular shape and a polished surface. The table rests on a dark, textured carpet. A small piece of paper or card is placed on the table. The setting appears to be indoors, possibly in a living room or lounge area, with part of a sofa visible in the background.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image depicts a <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">coffee table</span> with a <span style=\"color: #3298dc;\">natural</span>, <span style=\"color: #3298dc;\">irregular</span> shape and a <span style=\"color: #3298dc;\">polished</span> surface. The <span style=\"color: #f14668;\">table</span> <span style=\"color: #00d1b2;\">rests</span> on a dark, <span style=\"color: #3298dc;\">textured</span> <span style=\"color: #f14668;\">carpet</span>. A <span style=\"color: #3298dc;\">small</span> piece of <span style=\"color: #f14668;\">paper</span> or <span style=\"color: #f14668;\">card</span> is <span style=\"color: #00d1b2;\">placed</span> on the <span style=\"color: #f14668;\">table</span>. The <span style=\"color: #48c774;\">setting</span> appears to be indoors, possibly in a <span style=\"color: #48c774;\">living room</span> or <span style=\"color: #48c774;\">lounge</span> <span style=\"color: #48c774;\">area</span>, with part of a <span style=\"color: #f14668;\">sofa</span> <span style=\"color: #3298dc;\">visible</span> <span style=\"color: #00d1b2;\">in the background</span>.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 7,
+      "contextual_understanding": 4,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "640.jpg",
+    "description": "The image shows a cozy indoor setting with a polished wooden table and a cushioned armchair. The table has a natural, irregular edge, adding a rustic touch. A small round object, possibly a coaster or a coin, is on the dark carpeted floor next to the table. The overall ambiance appears warm and inviting.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">cozy</span> indoor <span style=\"color: #48c774;\">setting</span> with a <span style=\"color: #3298dc;\">polished</span> <span style=\"color: #f14668;\">wooden table</span> and a <span style=\"color: #3298dc;\">cushioned</span> <span style=\"color: #f14668;\">armchair</span>. The <span style=\"color: #f14668;\">table</span> has a <span style=\"color: #3298dc;\">natural</span>, <span style=\"color: #3298dc;\">irregular</span> edge, adding a <span style=\"color: #3298dc;\">rustic</span> touch. A <span style=\"color: #3298dc;\">small</span> <span style=\"color: #3298dc;\">round</span> object, possibly a <span style=\"color: #f14668;\">coaster</span> or a <span style=\"color: #f14668;\">coin</span>, is on the dark carpeted <span style=\"color: #f14668;\">floor</span> <span style=\"color: #00d1b2;\">next to</span> the <span style=\"color: #f14668;\">table</span>. The overall <span style=\"color: #48c774;\">ambiance</span> appears <span style=\"color: #3298dc;\">warm</span> and <span style=\"color: #48c774;\">inviting</span>.",
+    "annotation_stats": {
+      "spatial_relations": 1,
+      "object_properties": 9,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "20.jpg",
+    "description": "The image depicts a single, beige armchair positioned on a carpeted floor. The chair has a cushioned seat and backrest, with armrests on either side. The lighting is dim, casting shadows around the chair, giving the room a cozy and intimate ambiance. The background is blurred, suggesting an indoor setting, possibly a living room or lounge area.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image depicts a <span style=\"color: #3298dc;\">single</span>, <span style=\"color: #3298dc;\">beige</span> <span style=\"color: #f14668;\">armchair</span> <span style=\"color: #00d1b2;\">positioned</span> on a carpeted <span style=\"color: #f14668;\">floor</span>. The <span style=\"color: #f14668;\">chair</span> has a <span style=\"color: #3298dc;\">cushioned</span> <span style=\"color: #f14668;\">seat</span> and backrest, with armrests on either side. The lighting is dim, casting shadows <span style=\"color: #00d1b2;\">around</span> the <span style=\"color: #f14668;\">chair</span>, giving the <span style=\"color: #48c774;\">room</span> a <span style=\"color: #3298dc;\">cozy</span> and <span style=\"color: #48c774;\">intimate</span> <span style=\"color: #48c774;\">ambiance</span>. The background is <span style=\"color: #3298dc;\">blurred</span>, suggesting an indoor <span style=\"color: #48c774;\">setting</span>, possibly a <span style=\"color: #48c774;\">living room</span> or <span style=\"color: #48c774;\">lounge</span> <span style=\"color: #48c774;\">area</span>.",
+    "annotation_stats": {
+      "spatial_relations": 2,
+      "object_properties": 5,
+      "contextual_understanding": 7,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "220.jpg",
+    "description": "The image depicts a cozy seating area with two beige armchairs positioned on a dark carpeted floor. A unique, irregularly shaped wooden coffee table sits between the chairs, featuring a rich, natural wood grain. On the table, there is a small notepad or booklet. The setting appears to be warm and inviting, suitable for relaxation or conversation.",
+    "scene_id": "scene0013_00",
+    "annotated_description": "The image depicts a <span style=\"color: #3298dc;\">cozy</span> <span style=\"color: #48c774;\">seating area</span> with <span style=\"color: #f14668;\">two beige armchairs</span> <span style=\"color: #00d1b2;\">positioned</span> on a dark carpeted <span style=\"color: #f14668;\">floor</span>. A unique, irregularly shaped <span style=\"color: #3298dc;\">wooden</span> <span style=\"color: #f14668;\">coffee table</span> <span style=\"color: #00d1b2;\">sits</span> <span style=\"color: #00d1b2;\">between</span> the <span style=\"color: #f14668;\">chairs</span>, featuring a rich, <span style=\"color: #3298dc;\">natural</span> <span style=\"color: #3298dc;\">wood</span> grain. On the <span style=\"color: #f14668;\">table</span>, there is a <span style=\"color: #3298dc;\">small</span> <span style=\"color: #f14668;\">notepad</span> or <span style=\"color: #f14668;\">booklet</span>. The <span style=\"color: #48c774;\">setting</span> appears to be <span style=\"color: #3298dc;\">warm</span> and <span style=\"color: #48c774;\">inviting</span>, suitable <span style=\"color: #48c774;\">for relaxation</span> or conversation.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 6,
+      "contextual_understanding": 4,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "640.jpg",
+    "description": "The image shows a white door with a beige towel hanging on a hook. The door has a brass hinge on the left side. The wall next to the door is also white, creating a clean and minimalistic look. The towel appears to be soft and fluffy, suggesting it is used for drying after a shower or bath.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">door</span> with a <span style=\"color: #3298dc;\">beige</span> <span style=\"color: #f14668;\">towel</span> <span style=\"color: #00d1b2;\">hanging</span> on a <span style=\"color: #f14668;\">hook</span>. The <span style=\"color: #f14668;\">door</span> has a <span style=\"color: #3298dc;\">brass</span> <span style=\"color: #f14668;\">hinge</span> <span style=\"color: #00d1b2;\">on the left</span> side. The <span style=\"color: #f14668;\">wall</span> <span style=\"color: #00d1b2;\">next to</span> the <span style=\"color: #f14668;\">door</span> is also <span style=\"color: #3298dc;\">white</span>, creating a <span style=\"color: #3298dc;\">clean</span> and <span style=\"color: #48c774;\">minimalistic</span> look. The <span style=\"color: #f14668;\">towel</span> appears to be <span style=\"color: #3298dc;\">soft</span> and <span style=\"color: #3298dc;\">fluffy</span>, suggesting it is <span style=\"color: #48c774;\">used for</span> drying after a <span style=\"color: #f14668;\">shower</span> or bath.",
+    "annotation_stats": {
+      "spatial_relations": 3,
+      "object_properties": 7,
+      "contextual_understanding": 2,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "1140.jpg",
+    "description": "The image shows a clean, white toilet with the lid open, situated in a bathroom. To the left of the toilet, there is a small trash can with a liner. The floor appears to be covered with a textured, brown carpet or mat. The walls are light-colored, contributing to a simple and tidy appearance.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">clean</span>, <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">toilet</span> with the lid <span style=\"color: #3298dc;\">open</span>, situated in a <span style=\"color: #48c774;\">bathroom</span>. To the <span style=\"color: #00d1b2;\">left</span> of the <span style=\"color: #f14668;\">toilet</span>, there is a <span style=\"color: #3298dc;\">small</span> <span style=\"color: #f14668;\">trash can</span> with a <span style=\"color: #f14668;\">liner</span>. The <span style=\"color: #f14668;\">floor</span> appears to be covered with a <span style=\"color: #3298dc;\">textured</span>, <span style=\"color: #3298dc;\">brown</span> <span style=\"color: #f14668;\">carpet</span> or <span style=\"color: #f14668;\">mat</span>. The <span style=\"color: #f14668;\">walls</span> are <span style=\"color: #3298dc;\">light-colored</span>, contributing to a <span style=\"color: #48c774;\">simple</span> and <span style=\"color: #3298dc;\">tidy</span> <span style=\"color: #48c774;\">appearance</span>.",
+    "annotation_stats": {
+      "spatial_relations": 1,
+      "object_properties": 8,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "60.jpg",
+    "description": "The image shows a neatly arranged bathroom corner. A white toilet with a closed lid is topped with creatively folded towels and a roll of toilet paper. Above the toilet, three beige towels hang on a rack. The wall and surroundings are clean, giving the space a tidy and organized appearance. A small trash bin is visible beside the toilet.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a neatly <span style=\"color: #00d1b2;\">arranged</span> <span style=\"color: #48c774;\">bathroom corner</span>. A <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">toilet</span> with a <span style=\"color: #3298dc;\">closed</span> lid is <span style=\"color: #00d1b2;\">topped with</span> creatively <span style=\"color: #3298dc;\">folded</span> <span style=\"color: #f14668;\">towels</span> and a roll of <span style=\"color: #f14668;\">toilet paper</span>. <span style=\"color: #00d1b2;\">Above</span> the <span style=\"color: #f14668;\">toilet</span>, <span style=\"color: #f14668;\">three beige towels</span> hang on a rack. The <span style=\"color: #f14668;\">wall</span> and surroundings are <span style=\"color: #3298dc;\">clean</span>, giving the <span style=\"color: #48c774;\">space</span> a <span style=\"color: #3298dc;\">tidy</span> and <span style=\"color: #3298dc;\">organized</span> <span style=\"color: #48c774;\">appearance</span>. A <span style=\"color: #3298dc;\">small</span> <span style=\"color: #f14668;\">trash bin</span> is <span style=\"color: #3298dc;\">visible</span> <span style=\"color: #00d1b2;\">beside</span> the <span style=\"color: #f14668;\">toilet</span>.",
+    "annotation_stats": {
+      "spatial_relations": 4,
+      "object_properties": 8,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "660.jpg",
+    "description": "The image shows a white door with a beige towel hanging on a hook in the center. The door has a simple design with visible hinges on the left side. The surrounding wall is also white, and part of a textured surface can be seen on the right side of the image. The setting appears to be a bathroom.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">door</span> with a <span style=\"color: #3298dc;\">beige</span> <span style=\"color: #f14668;\">towel</span> <span style=\"color: #00d1b2;\">hanging</span> on a <span style=\"color: #f14668;\">hook</span> in the <span style=\"color: #00d1b2;\">center</span>. The <span style=\"color: #f14668;\">door</span> has a <span style=\"color: #48c774;\">simple</span> design with <span style=\"color: #3298dc;\">visible</span> <span style=\"color: #f14668;\">hinges</span> <span style=\"color: #00d1b2;\">on the left</span> side. The <span style=\"color: #00d1b2;\">surrounding</span> <span style=\"color: #f14668;\">wall</span> is also <span style=\"color: #3298dc;\">white</span>, and part of a <span style=\"color: #3298dc;\">textured</span> surface can be seen <span style=\"color: #00d1b2;\">on the right</span> side of the image. The <span style=\"color: #48c774;\">setting</span> appears to be a <span style=\"color: #48c774;\">bathroom</span>.",
+    "annotation_stats": {
+      "spatial_relations": 5,
+      "object_properties": 5,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "1420.jpg",
+    "description": "The image shows a clean, white bathtub with a chrome faucet and drain. The bathtub is set against a tiled wall with a beige or light brown color. A yellowish towel or curtain is partially visible on the right side, hanging over the edge of the tub. The overall setting appears to be a bathroom.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">clean</span>, <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">bathtub</span> with a <span style=\"color: #3298dc;\">chrome</span> <span style=\"color: #f14668;\">faucet</span> and <span style=\"color: #f14668;\">drain</span>. The <span style=\"color: #f14668;\">bathtub</span> is <span style=\"color: #00d1b2;\">set against</span> a <span style=\"color: #3298dc;\">tiled</span> <span style=\"color: #f14668;\">wall</span> with a <span style=\"color: #3298dc;\">beige</span> or <span style=\"color: #f14668;\">light</span> <span style=\"color: #3298dc;\">brown</span> color. A yellowish <span style=\"color: #f14668;\">towel</span> or <span style=\"color: #f14668;\">curtain</span> is <span style=\"color: #3298dc;\">partially visible</span> <span style=\"color: #00d1b2;\">on the right</span> side, <span style=\"color: #00d1b2;\">hanging</span> over the <span style=\"color: #00d1b2;\">edge of</span> the <span style=\"color: #f14668;\">tub</span>. The overall <span style=\"color: #48c774;\">setting</span> appears to be a <span style=\"color: #48c774;\">bathroom</span>.",
+    "annotation_stats": {
+      "spatial_relations": 4,
+      "object_properties": 7,
+      "contextual_understanding": 2,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "720.jpg",
+    "description": "The image shows a white door with a silver doorknob. A light-colored, possibly beige or off-white, bathrobe or towel is hanging on the door. The door is part of a plain, light-colored wall, and the image is slightly blurry. The overall setting appears to be indoors, likely in a bathroom or bedroom.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image shows a <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">door</span> with a <span style=\"color: #f14668;\">silver doorknob</span>. A <span style=\"color: #3298dc;\">light-colored</span>, possibly <span style=\"color: #3298dc;\">beige</span> or off-<span style=\"color: #3298dc;\">white</span>, <span style=\"color: #f14668;\">bathrobe</span> or <span style=\"color: #f14668;\">towel</span> is <span style=\"color: #00d1b2;\">hanging</span> on the <span style=\"color: #f14668;\">door</span>. The <span style=\"color: #f14668;\">door</span> is part of a plain, <span style=\"color: #3298dc;\">light-colored</span> <span style=\"color: #f14668;\">wall</span>, and the image is slightly blurry. The overall <span style=\"color: #48c774;\">setting</span> appears to be indoors, likely in a <span style=\"color: #48c774;\">bathroom</span> or <span style=\"color: #48c774;\">bedroom</span>.",
+    "annotation_stats": {
+      "spatial_relations": 1,
+      "object_properties": 5,
+      "contextual_understanding": 3,
+      "multi_object_alignment": 0
+    }
+  },
+  {
+    "frame_id": "1220.jpg",
+    "description": "The image depicts a small bathroom corner. A white toilet is positioned next to a beige shower curtain. On top of the toilet tank, there is a neatly folded towel arranged in a decorative manner. A small trash can with a plastic liner is placed beside the toilet. The overall decor is simple and functional.",
+    "scene_id": "scene0029_00",
+    "annotated_description": "The image depicts a <span style=\"color: #3298dc;\">small</span> <span style=\"color: #48c774;\">bathroom corner</span>. A <span style=\"color: #3298dc;\">white</span> <span style=\"color: #f14668;\">toilet</span> is <span style=\"color: #00d1b2;\">positioned</span> <span style=\"color: #00d1b2;\">next to</span> a <span style=\"color: #3298dc;\">beige</span> <span style=\"color: #f14668;\">shower</span> <span style=\"color: #f14668;\">curtain</span>. On <span style=\"color: #00d1b2;\">top</span> of the <span style=\"color: #f14668;\">toilet</span> tank, there is a neatly <span style=\"color: #3298dc;\">folded</span> <span style=\"color: #f14668;\">towel</span> <span style=\"color: #00d1b2;\">arranged</span> in a <span style=\"color: #f14668;\">decorative manner</span>. A <span style=\"color: #3298dc;\">small</span> <span style=\"color: #f14668;\">trash can</span> with a <span style=\"color: #f14668;\">plastic liner</span> is <span style=\"color: #00d1b2;\">placed</span> <span style=\"color: #00d1b2;\">beside</span> the <span style=\"color: #f14668;\">toilet</span>. The overall <span style=\"color: #48c774;\">decor</span> is <span style=\"color: #48c774;\">simple</span> and <span style=\"color: #48c774;\">functional</span>.",
+    "annotation_stats": {
+      "spatial_relations": 6,
+      "object_properties": 5,
+      "contextual_understanding": 4,
+      "multi_object_alignment": 0
+    }
+  }
+]
