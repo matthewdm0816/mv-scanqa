@@ -579,17 +579,19 @@
     
     if (!example) return;
     
+    // append object_id_1 after object_name_1
+    let object_names_with_id_1 = example.object_names_1.map((name, idx) => `${name} (${example.object_ids_1[idx]})`);
+    let object_names_with_id_2 = example.object_names_2.map((name, idx) => `${name} (${example.object_ids_2[idx]})`);
+    
     // Update Question 1
     document.getElementById('mvQuestion1').textContent = example.question_1;
     document.getElementById('mvAnswer1').textContent = example.answers_1[0];
-    document.getElementById('mvObjects1').textContent = 
-      example.object_names_1.join(', ');
+    document.getElementById('mvObjects1').textContent = object_names_with_id_1.join(', ');
     
     // Update Question 2
     document.getElementById('mvQuestion2').textContent = example.question_2;
     document.getElementById('mvAnswer2').textContent = example.answers_2[0];
-    document.getElementById('mvObjects2').textContent = 
-      example.object_names_2.join(', ');
+    document.getElementById('mvObjects2').textContent = object_names_with_id_2.join(', ');
     
     // Update Composite Question
     document.getElementById('mvNewQuestion').textContent = example.new_question;
@@ -597,7 +599,7 @@
     
     // Merge and deduplicate objects
     const allObjectIds = [...new Set([...example.object_ids_1, ...example.object_ids_2])];
-    const allObjectNames = [...new Set([...example.object_names_1, ...example.object_names_2])];
+    const allObjectNames = [...new Set([...object_names_with_id_1, ...object_names_with_id_2])];
     document.getElementById('mvAllObjects').textContent = allObjectNames.join(', ');
     
     // Update view requirements
