@@ -2,7 +2,7 @@ import json
 import random
 
 # 读取MV-ScanQA数据
-with open('static/ScanQA_mv_train_filtered.json', 'r') as f:
+with open('static/ScanQA_mv_train_0.5_filtered_w_viewinfo.json', 'r') as f:
     full_data = json.load(f)
 
 # 指定要提取的场景
@@ -21,7 +21,7 @@ for scene in target_scenes:
         sampled_data.extend(sampled)
 
 # 保存采样数据
-with open('static/mvscanqa/sampled_mvscanqa.json', 'w') as f:
+with open('static/mvscanqa/sampled_mvscanqa_w_viewinfo.json', 'w') as f:
     json.dump(sampled_data, f, indent=2)
 
 print(f"Sampled {len(sampled_data)} MV-ScanQA examples")

@@ -229,62 +229,6 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- MV-ScanQA Dataset Examples -->
-<section class="section">
-  <!--Temporary disable to make it better-->
-  <!-- <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">MV-ScanQA Dataset Examples (Static)</h2>
-        <div class="content has-text-justified">
-          <p>
-            MV-ScanQA challenges models with questions that require reasoning across multiple viewpoints. 
-            Below are examples showing how questions necessitate integrating information from different perspectives 
-            and distant objects to arrive at the correct answer.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered" style="margin-top: 2rem;">
-      <div class="column is-full">
-        <figure class="image">
-          <img src="static/images/qual-mvscanqa.png"
-               alt="MV-ScanQA Dataset Examples" 
-               style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-        </figure>
-        <div class="content has-text-centered" style="margin-top: 1rem;">
-          <p class="is-size-6 has-text-grey">
-            <em>Figure: Examples from MV-ScanQA showing multi-view questions and their corresponding 3D scenes. 
-            Questions are designed to require information integration from multiple viewpoints.</em>
-          </p>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Key Statistics -->
-    <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
-      <div class="column is-3">
-        <div class="box has-text-centered">
-          <p class="title is-5 has-text-primary">68%</p>
-          <p class="subtitle is-6">Multi-view Questions</p>
-        </div>
-      </div>
-      <div class="column is-3">
-        <div class="box has-text-centered">
-          <p class="title is-5 has-text-info">3.2k</p>
-          <p class="subtitle is-6">Total Questions</p>
-        </div>
-      </div>
-      <div class="column is-3">
-        <div class="box has-text-centered">
-          <p class="title is-5 has-text-success">2.3</p>
-          <p class="subtitle is-6">Average Views Required</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- MV-ScanQA Dataset Statistics -->
 <section class="section" style="background-color: #fafafa;">
   <div class="container is-max-desktop">
@@ -337,6 +281,29 @@
             <em>Breakdown of question types showing the diversity of reasoning tasks, 
             including counting, spatial relations, and attribute queries.</em>
           </p>
+        </div>
+      </div>
+    </div>
+
+      <!-- Key Statistics -->
+      <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+        <div class="column is-3">
+          <div class="box has-text-centered">
+            <p class="title is-5 has-text-primary">68%</p>
+            <p class="subtitle is-6">Multi-view Questions</p>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="box has-text-centered">
+            <p class="title is-5 has-text-info">10K</p>
+            <p class="subtitle is-6">Total Questions</p>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="box has-text-centered">
+            <p class="title is-5 has-text-success">2.3</p>
+            <p class="subtitle is-6">Average Views Required</p>
+          </div>
         </div>
       </div>
     </div>
@@ -496,6 +463,54 @@
           </div>
         </div>
       </div>
+
+      <!-- Oracle Views Showcase -->
+      <div class="box" style="margin-top: 2rem; background-color: #f0f8ff;">
+        <h3 class="title is-4 has-text-centered">Scene Visualization & Oracle Views</h3>
+        
+        <!-- Bird's Eye View with Annotations -->
+        <div class="columns is-centered" style="margin-bottom: 2rem;">
+          <div class="column is-8">
+            <div class="box has-background-white">
+              <h4 class="subtitle is-5 has-text-info">
+                <span class="icon"><i class="fas fa-map"></i></span>
+                Bird's Eye View (with Object Annotations)
+              </h4>
+              <div style="position: relative; display: inline-block; width: 100%;">
+                <img id="mvBirdView" 
+                    src="static/mvscanqa/birdview/scene0000_00_0.png" 
+                    alt="Bird's eye view of the scene"
+                    style="width: 100%; height: auto; border-radius: 4px;">
+                <!-- SVG overlay for bounding boxes -->
+                <svg id="mvBoundingBoxes" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                  <!-- Bounding boxes will be drawn here -->
+                </svg>
+              </div>
+              <div class="tags is-centered" style="margin-top: 1rem;">
+                <span class="tag is-primary">Question 1 Objects</span>
+                <span class="tag is-success">Question 2 Objects</span>
+                <span class="tag is-warning">Overlapping Objects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oracle Views -->
+        <div class="box has-background-white">
+          <h4 class="subtitle is-5 has-text-success">
+            <span class="icon"><i class="fas fa-camera"></i></span>
+            Oracle Views Required to Answer
+          </h4>
+          <div id="mvOracleViews" class="columns is-multiline is-centered is-variable is-2">
+            <!-- Oracle view images will be dynamically inserted here -->
+          </div>
+          <p class="has-text-centered has-text-grey is-size-7" style="margin-top: 1rem;">
+            <em>These are the an example set of views required to see all objects mentioned in the multi-view question</em>
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -507,7 +522,7 @@
   // Load MV-ScanQA annotations
   async function loadMVScanQAAnnotations() {
     try {
-      const response = await fetch('static/mvscanqa/sampled_mvscanqa.json');
+      const response = await fetch('static/mvscanqa/sampled_mvscanqa_w_viewinfo.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -592,10 +607,14 @@
     document.getElementById('mvQuestion2').textContent = example.question_2;
     document.getElementById('mvAnswer2').textContent = example.answers_2[0];
     document.getElementById('mvObjects2').textContent = object_names_with_id_2.join(', ');
+
+    // colorize the full word "or" into special color in the new_answer
+    // example.new_answer = example.new_answer.replace(/or/g, '<span class="has-text-danger">or</span>');
+    example.new_answer = example.new_answer.replace(/\bor\b/g, '<span class="has-text-danger">or</span>');
     
     // Update Composite Question
     document.getElementById('mvNewQuestion').textContent = example.new_question;
-    document.getElementById('mvNewAnswer').textContent = example.new_answer;
+    document.getElementById('mvNewAnswer').innerHTML = example.new_answer;
     
     // Merge and deduplicate objects
     const allObjectIds = [...new Set([...example.object_ids_1, ...example.object_ids_2])];
@@ -612,6 +631,185 @@
     const overlapMean = (example.best_view_overlap_mean * 100).toFixed(1);
     document.getElementById('mvOverlapScore').innerHTML = 
       `<span class="tag is-medium is-info">${overlapMean}%</span>`;
+
+    // 加载鸟瞰图和标注
+    loadBirdViewWithAnnotations(sceneId, exampleIndex, example);
+    
+    // 加载Oracle视图
+    loadOracleViews(sceneId, example);
+  }
+
+  // 加载带标注的鸟瞰图
+  function loadBirdViewWithAnnotations(sceneId, exampleIndex, example) {
+    // 更新鸟瞰图 - 每个场景一个
+    const birdViewImg = document.getElementById('mvBirdView');
+    birdViewImg.src = `static/birdview/${sceneId}_sample_${exampleIndex}.png`;
+    
+    // 处理图片加载失败
+    birdViewImg.onerror = function() {
+      this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJpcmQncyBFeWUgVmlldyBQbGFjZWhvbGRlcjwvdGV4dD48L3N2Zz4=';
+    };
+    
+    // 等待图片加载完成后绘制边界框
+    birdViewImg.onload = function() {
+      drawBoundingBoxes(example, this.naturalWidth, this.naturalHeight);
+    };
+  }
+
+  // 绘制边界框
+  function drawBoundingBoxes(example, imgWidth, imgHeight) {
+    const svg = document.getElementById('mvBoundingBoxes');
+    svg.innerHTML = ''; // 清空现有内容
+    
+    // 获取实际显示尺寸
+    const displayWidth = document.getElementById('mvBirdView').clientWidth;
+    const displayHeight = document.getElementById('mvBirdView').clientHeight;
+    
+    // 计算缩放比例
+    const scaleX = displayWidth / imgWidth;
+    const scaleY = displayHeight / imgHeight;
+    
+    // 假设边界框数据在example中
+    const boxes1 = example.bounding_boxes_1 || [];
+    const boxes2 = example.bounding_boxes_2 || [];
+    
+    // 创建一个Map来追踪所有的框
+    const allBoxes = new Map();
+    
+    // 处理第一个问题的物体
+    boxes1.forEach((box) => {
+      const key = `${box.object_id}`;
+      if (!allBoxes.has(key)) {
+        allBoxes.set(key, { box: box, colors: [] });
+      }
+      allBoxes.get(key).colors.push('#3273dc'); // 蓝色
+    });
+    
+    // 处理第二个问题的物体
+    boxes2.forEach((box) => {
+      const key = `${box.object_id}`;
+      if (!allBoxes.has(key)) {
+        allBoxes.set(key, { box: box, colors: [] });
+      }
+      allBoxes.get(key).colors.push('#48c774'); // 绿色
+    });
+    
+    // 绘制所有框
+    allBoxes.forEach((data, key) => {
+      const { box, colors } = data;
+      
+      if (colors.length === 1) {
+        // 单色框
+        drawSingleBox(svg, box, scaleX, scaleY, colors[0], `obj_${key}`);
+      } else {
+        // 双色框（重叠物体）
+        drawDoubleBox(svg, box, scaleX, scaleY, colors[0], colors[1], `obj_${key}_overlap`);
+      }
+    });
+  }
+
+  // 绘制单色边界框
+  function drawSingleBox(svg, box, scaleX, scaleY, color, id) {
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', box.x * scaleX);
+    rect.setAttribute('y', box.y * scaleY);
+    rect.setAttribute('width', box.width * scaleX);
+    rect.setAttribute('height', box.height * scaleY);
+    rect.setAttribute('fill', 'none');
+    rect.setAttribute('stroke', color);
+    rect.setAttribute('stroke-width', '3');
+    rect.setAttribute('stroke-dasharray', '5,5');
+    rect.setAttribute('id', id);
+    
+    svg.appendChild(rect);
+  }
+
+  // 绘制双色边界框（内外框）
+  function drawDoubleBox(svg, box, scaleX, scaleY, innerColor, outerColor, id) {
+    const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    group.setAttribute('id', id);
+    
+    // 外框
+    const outerRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    outerRect.setAttribute('x', (box.x - 3) * scaleX); // 稍微扩大
+    outerRect.setAttribute('y', (box.y - 3) * scaleY);
+    outerRect.setAttribute('width', (box.width + 6) * scaleX);
+    outerRect.setAttribute('height', (box.height + 6) * scaleY);
+    outerRect.setAttribute('fill', 'none');
+    outerRect.setAttribute('stroke', outerColor);
+    outerRect.setAttribute('stroke-width', '3');
+    outerRect.setAttribute('stroke-dasharray', '5,5');
+    
+    // 内框
+    const innerRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    innerRect.setAttribute('x', box.x * scaleX);
+    innerRect.setAttribute('y', box.y * scaleY);
+    innerRect.setAttribute('width', box.width * scaleX);
+    innerRect.setAttribute('height', box.height * scaleY);
+    innerRect.setAttribute('fill', 'none');
+    innerRect.setAttribute('stroke', innerColor);
+    innerRect.setAttribute('stroke-width', '3');
+    innerRect.setAttribute('stroke-dasharray', '5,5');
+    
+    group.appendChild(outerRect);
+    group.appendChild(innerRect);
+    svg.appendChild(group);
+  }
+
+  // 加载Oracle视图
+  function loadOracleViews(sceneId, example) {
+    const container = document.getElementById('mvOracleViews');
+    container.innerHTML = ''; // 清空现有内容
+    
+    // 从example中获取oracle视图
+    const viewIds = example.oracle_views || [];
+    const numViews = viewIds.length;
+
+    console.log(example)
+    console.log(`Loading ${numViews} oracle views for scene ${sceneId}`);
+    
+    if (numViews === 0) {
+      container.innerHTML = `
+        <div class="column is-12">
+          <div class="notification is-light">
+            <p class="has-text-centered">No oracle views available for this example</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+    
+    // 根据视图数量决定列宽
+    let columnClass = 'is-6'; // 默认两列
+    if (numViews === 1) {
+      columnClass = 'is-6 is-offset-3'; // 单图居中
+    } else if (numViews === 3) {
+      columnClass = 'is-4'; // 三列
+    } else if (numViews >= 4) {
+      columnClass = 'is-3'; // 四列
+    }
+    
+    // 创建视图元素
+    viewIds.forEach((viewId, idx) => {
+      const viewDiv = document.createElement('div');
+      viewDiv.className = `column ${columnClass}`;
+      
+      // 使用与TripAlign相同的路径格式
+      const imagePath = `static/tripalign/images/${sceneId}/color/${viewId}.jpg`;
+      
+      viewDiv.innerHTML = `
+        <figure class="image">
+          <img src="${imagePath}" 
+              alt="Oracle view ${idx + 1}"
+              style="border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlZpZXcgJHtpZHggKyAxfTwvdGV4dD48L3N2Zz4='">
+          <figcaption class="has-text-centered has-text-grey is-size-7" style="margin-top: 0.5rem;">
+            View ${idx + 1} (Frame: ${viewId})
+          </figcaption>
+        </figure>
+      `;
+      container.appendChild(viewDiv);
+    });
   }
   
   // Fallback data
