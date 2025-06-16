@@ -636,7 +636,7 @@
     loadBirdViewWithAnnotations(sceneId, exampleIndex, example);
     
     // 加载Oracle视图
-    loadOracleViews(sceneId, example);
+    loadOracleViews(sceneId, exampleIndex, example);
   }
 
   // 加载带标注的鸟瞰图
@@ -757,7 +757,7 @@
   }
 
   // 加载Oracle视图
-  function loadOracleViews(sceneId, example) {
+  function loadOracleViews(sceneId, exampleIndex, example) {
     const container = document.getElementById('mvOracleViews');
     container.innerHTML = ''; // 清空现有内容
     
@@ -795,7 +795,9 @@
       viewDiv.className = `column ${columnClass}`;
       
       // 使用与TripAlign相同的路径格式
-      const imagePath = `static/tripalign/images/${sceneId}/color/${viewId}.jpg`;
+      // const imagePath = `static/tripalign/images/${sceneId}/color/${viewId}.jpg`;
+      const imagePath = `static/birdview/${sceneId}_sample_${exampleIndex}_view_${viewId}.jpg`;
+
       
       viewDiv.innerHTML = `
         <figure class="image">
